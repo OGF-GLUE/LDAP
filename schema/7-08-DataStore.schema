@@ -1,0 +1,79 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 7.8 DataStore
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# DataStore inherits from Resource
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.8.1
+        NAME 'GLUE2DataStoreType'
+        DESC 'Type of storage resource'
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.8.2
+        NAME 'GLUE2DataStoreLatency'
+        DESC 'The maximum latency category for a file stored in this resource
+	to be made available for reading'
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.8.3
+        NAME 'GLUE2DataStoreTotalSize'
+        DESC 'Size of storage extent'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.8.4
+        NAME 'GLUE2DataStoreFreeSize'
+        DESC 'Size of free storage extent '
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.8.5
+        NAME 'GLUE2DataStoreUsedSize'
+        DESC 'Size of used storage extent'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.8.6
+        NAME 'GLUE2DataStoreStorageManagerForeignKey'
+        DESC 'ForeignKey' 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        SINGLE-VALUE
+ )
+
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.7.8
+        NAME 'GLUE2DataStore'
+        DESC 'Abstraction of a sufficiently homogeneous storage device
+	providing a storage capacity, managed by a local software component 
+	(storage manager), part of a storage service, reachable via one or 
+	more endpoints and having one or more shares defined on it. A storage 
+	resource refers to a category with summary information on the capacity'
+        AUXILIARY
+        MUST ( GLUE2DataStoreType $ 
+	GLUE2DataStoreLatency $
+	GLUE2DataStoreStorageManagerForeignKey )
+        MAY ( GLUE2DataStoreTotalSize $ 
+	GLUE2DataStoreFreeSize $ 
+	GLUE2DataStoreUsedSize )
+ )
+

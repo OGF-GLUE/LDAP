@@ -1,0 +1,61 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 5.12 Policy, 5.12.1 AccessPolicy, 5.12.2 MappingPolicy
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# Policy <<abstract>> inherits from Entity
+
+#########################################################
+# AccessPolicy inherits from Policy
+#########################################################
+# Min attributes example
+dn: GLUE2PolicyID=testAccessPolicyMin,o=glue
+objectClass: GLUE2Policy
+objectClass: GLUE2AccessPolicy
+GLUE2PolicyID: testAccessPolicyMin
+GLUE2PolicyScheme: Type
+GLUE2PolicyRule: myRule
+GLUE2PolicyUserDomainForeignKey: FK
+GLUE2AccessPolicyEndpointForeignKey: FK
+
+# All attributes example
+dn: GLUE2PolicyID=testAccessPolicy,o=glue
+objectClass: GLUE2Policy
+objectClass: GLUE2AccessPolicy
+GLUE2PolicyID: testAccessPolicy
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2PolicyScheme: Type
+GLUE2PolicyRule: myRule
+GLUE2PolicyUserDomainForeignKey: FK
+GLUE2AccessPolicyEndpointForeignKey: FK
+
+#########################################################
+# MappingPolicy inherits from Policy
+#########################################################
+# Min attributes example
+dn: GLUE2PolicyID=testMappingPolicyMin,o=glue
+objectClass: GLUE2Policy
+objectClass: GLUE2MappingPolicy
+GLUE2PolicyID: testMappingPolicyMin
+GLUE2PolicyScheme: Type
+GLUE2PolicyRule: myRule
+GLUE2PolicyUserDomainForeignKey: FK
+GLUE2MappingPolicyShareForeignKey: FK
+
+# All attributes example
+dn: GLUE2PolicyID=testMappingPolicy,o=glue
+objectClass: GLUE2Policy
+objectClass: GLUE2MappingPolicy
+GLUE2PolicyID: testMappingPolicy
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2PolicyScheme: Type
+GLUE2PolicyRule: myRule
+GLUE2PolicyUserDomainForeignKey: FK
+GLUE2MappingPolicyShareForeignKey: FK

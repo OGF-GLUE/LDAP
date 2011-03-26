@@ -1,0 +1,25 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 6.5 Benchmark
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# Benchmark inherits from Entity
+
+# Min attributes example
+dn: GLUE2BenchmarkID=testBenchmarkMin,o=glue
+objectClass: GLUE2Benchmark
+GLUE2BenchmarkID: testBenchmarkMin
+GLUE2BenchmarkType: Type
+GLUE2BenchmarkValue: 0.0
+
+# All attributes example
+dn: GLUE2BenchmarkID=testBenchmark,o=glue
+objectClass: GLUE2Benchmark
+GLUE2BenchmarkID: testBenchmark
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2BenchmarkType: Type
+GLUE2BenchmarkValue: 0.0

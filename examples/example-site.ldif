@@ -1,0 +1,29 @@
+# Site in a Grid
+ 
+dn: GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Domain
+objectClass: GLUE2AdminDomain
+GLUE2DomainId: mysite.com
+GLUE2DomainDescription: Example Grid Site
+GLUE2DomainWWW: http://mysite.com
+GLUE2AdminDomainDistributed: FALSE
+GLUE2AdminDomainOwner: Some organization
+GLUE2AdminDomainAdminDomainForeignKey: mygrid.org
+
+dn: GLUE2LocationId=location.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Location
+GLUE2LocationId: location.mysite.com
+GLUE2LocationAddress: 15700 103rd St. Suite 210 Lemont, IL  60439  USA
+GLUE2LocationPlace: Lemont
+GLUE2LocationCountry: US
+GLUE2LocationPostCode: 60439
+GLUE2LocationLatitude: 41.702764
+GLUE2LocationLongitude: -88.021088
+GLUE2LocationDomainForeignKey: mysite.com
+
+dn: GLUE2ContactId=mail.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Contact
+GLUE2ContactId: mail.mysite.com
+GLUE2ContactDetail:  support@mysite.com
+GLUE2ContactType: email
+GLUE2ContactDomainForeignKey: mysite.com

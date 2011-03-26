@@ -1,0 +1,61 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 5.4 Contact
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# Contact inherits from Entity
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.4.1
+        NAME 'GLUE2ContactID' 
+        DESC 'Globally unique ID' 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+        SINGLE-VALUE 
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.4.2
+        NAME 'GLUE2ContactDetail' 
+        DESC 'URL embedding the contact information. The syntax of URI depends
+	on the communication channel'
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+        SINGLE-VALUE 
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.4.3
+        NAME 'GLUE2ContactType' 
+        DESC 'Type of contact' 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+        SINGLE-VALUE 
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.4.4
+        NAME 'GLUE2ContactServiceForeignKey' 
+        DESC 'ForeignKey' 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.4.5
+        NAME 'GLUE2ContactDomainForeignKey' 
+        DESC 'ForeignKey' 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+ )
+
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.4 
+        NAME 'GLUE2Contact' 
+        SUP GLUE2Entity
+        DESC 'Information enabling to establish a  communication with a person
+	or group of persons part of a domain'
+        STRUCTURAL 
+        MUST ( GLUE2ContactID $ GLUE2ContactDetail $ GLUE2ContactType )
+        MAY ( GLUE2ContactServiceForeignKey $ GLUE2ContactDomainForeignKey ) 
+ )

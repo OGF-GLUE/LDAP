@@ -1,0 +1,129 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 5.5 Domain, 5.5.1 AdminDomain and 5.5.2 UserDomain
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# Domain <<abstract>> inherits from Entity
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.1
+        NAME 'GLUE2DomainID'
+        DESC 'An unique identifier' 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.2
+        NAME 'GLUE2DomainDescription' 
+        DESC 'A description of the domain' 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.3
+        NAME 'GLUE2DomainWWW' 
+        DESC 'The URL identifying a web page with more information about the
+	domain'
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+ )
+
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.5.5
+        NAME 'GLUE2Domain' 
+        SUP GLUE2Entity
+        DESC 'A Domain' 
+        STRUCTURAL 
+        MUST GLUE2DomainID 
+        MAY ( GLUE2DomainDescription $ GLUE2DomainWWW )
+ )
+
+#########################################################
+# AdminDomain inherits from Domain
+#########################################################
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.7.1 
+        NAME 'GLUE2AdminDomainDistributed' 
+        DESC 'True if the services managed by the AdminDomain are considered
+	geographically distributed by the administrators themselves'
+        EQUALITY booleanMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.7.2
+        NAME 'GLUE2AdminDomainOwner' 
+        DESC 'Owner of the managed resources' 
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.7.4
+        NAME 'GLUE2AdminDomainAdminDomainForeignKey'
+        DESC 'ForeignKey'
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        SINGLE-VALUE
+ )
+
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.5.7
+        NAME 'GLUE2AdminDomain' 
+        DESC 'A collection of actors that can be assigned with administrative
+	roles and privileges to services via policies. An AdminDomain manages 
+	services that can be geographically distributed, nevertheless a primary
+	location should be identified.'
+        AUXILIARY 
+        MAY ( GLUE2AdminDomainDistributed $ GLUE2AdminDomainOwner $
+	GLUE2AdminDomainAdminDomainForeignKey )
+ )
+
+################################################
+# UserDomain inherits from Domain
+################################################
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.8.1 
+        NAME 'GLUE2UserDomainLevel' 
+        DESC 'The number of hops to reach the root for hierarchically organized
+	domains described by the composed by association (0 is for the root).'
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.8.2 
+        NAME 'GLUE2UserDomainUserManager' 
+        DESC 'The Endpoint ID managing the users part of the domain and the
+	related attributes such as groups or roles'
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.8.3 
+        NAME 'GLUE2UserDomainMember' 
+        DESC 'An identifier for a user in this user domain' 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.8.5
+        NAME 'GLUE2UserDomainUserDomainForeignKey'
+        DESC 'ForeignKey' 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+ )
+
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.5.8
+        NAME 'GLUE2UserDomain' 
+        DESC 'A collection of actors that can be assigned with user roles and
+	privileges to services or shares via policies'
+        AUXILIARY 
+        MAY ( GLUE2UserDomainLevel $ GLUE2UserDomainUserManager $
+	GLUE2UserDomainMember $ GLUE2UserDomainUserDomainForeignKey )
+ )
+

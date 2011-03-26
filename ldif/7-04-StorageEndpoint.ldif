@@ -1,0 +1,54 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 7.4 StorageEndpoint
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# StorageEndpoint inherits from Endpoint
+# No attributes
+
+# Min attributes example
+dn: GLUE2EndpointID=testStorageEndpointMin,o=glue
+objectClass: GLUE2Endpoint
+objectClass: GLUE2StorageEndpoint
+GLUE2EndpointID: testStorageEndpointMin
+GLUE2EndpointURL: http://cern.ch
+GLUE2EndpointInterfaceName: Type
+GLUE2EndpointQualityLevel: Type
+GLUE2EndpointHealthState: Type
+GLUE2EndpointServingState: Type
+GLUE2StorageEndpointStorageServiceForeignKey: FK
+
+# All attributes example
+dn: GLUE2EndpointID=testStorageEndpoint,o=glue
+objectClass: GLUE2Endpoint
+objectClass: GLUE2StorageEndpoint
+GLUE2EndpointID: testStorageEndpoint
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2EndpointURL: http://cern.ch
+GLUE2EndpointCapability: Type
+GLUE2EndpointTechnology: Type
+GLUE2EndpointInterfaceName: Type
+GLUE2EndpointInterfaceVersion: 1.0
+GLUE2EndpointInterfaceExtension: URI
+GLUE2EndpointWSDL: URL
+GLUE2EndpointSupportedProfile: URI
+GLUE2EndpointSemantics: URL
+GLUE2EndpointImplementor: CERN
+GLUE2EndpointImplementationName: myImplementation
+GLUE2EndpointImplementationVersion: 1.0
+GLUE2EndpointQualityLevel: Type
+GLUE2EndpointHealthState: Type
+GLUE2EndpointHealthStateInfo: Type
+GLUE2EndpointServingState: Type
+GLUE2EndpointStartTime: 1970-01-01T00:00:00Z
+GLUE2EndpointIssuerCA: Type
+GLUE2EndpointTrustedCA: Type
+GLUE2EndpointDowntimeAnnounce: 1970-01-01T00:00:00Z
+GLUE2EndpointDowntimeStart: 1970-01-01T00:00:00Z
+GLUE2EndpointDowntimeEnd: 1970-01-01T00:00:00Z
+GLUE2EndpointDowntimeInfo: Description
+GLUE2StorageEndpointStorageServiceForeignKey: FK

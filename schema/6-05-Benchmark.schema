@@ -1,0 +1,63 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 6.5 Benchmark
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# Benchmark inherits from Entity
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.5.1
+        NAME 'GLUE2BenchmarkID'
+        DESC 'Globally unique ID'
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.5.2
+        NAME 'GLUE2BenchmarkType'
+        DESC 'Type of benchmark'
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.5.3
+        NAME 'GLUE2BenchmarkValue'
+        DESC 'Value'
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.5.4
+        NAME 'GLUE2BenchmarkExecutionEnvironmentForeignKey' 
+        DESC 'ForeignKey' 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.5.5
+        NAME 'GLUE2BenchmarkComputingManagerForeignKey' 
+        DESC 'ForeignKey' 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        SINGLE-VALUE
+ )
+
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.6.5
+        NAME 'GLUE2Benchmark'
+        SUP GLUE2Entity
+        DESC 'Benchmark information about an entity providing computing
+	capacity'
+        STRUCTURAL
+        MUST ( GLUE2BenchmarkID $ GLUE2BenchmarkType $ GLUE2BenchmarkValue )
+        MAY ( GLUE2BenchmarkExecutionEnvironmentForeignKey $
+	GLUE2BenchmarkComputingManagerForeignKey )
+ )

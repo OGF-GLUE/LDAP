@@ -1,0 +1,52 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 6.6 ExecutionEnvironment
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# ExecutionEnvironment inherits from Resource
+
+# Min attributes example
+dn: GLUE2ResourceID=testExecutionEnvironmentMin,o=glue
+objectClass: GLUE2Resource
+objectClass: GLUE2ExecutionEnvironment
+GLUE2ResourceID: testExecutionEnvironmentMin
+GLUE2ExecutionEnvironmentPlatform: Type
+GLUE2ExecutionEnvironmentMainMemorySize: 0
+GLUE2ExecutionEnvironmentOSFamily: Type
+GLUE2ExecutionEnvironmentConnectivityIn: TRUE
+GLUE2ExecutionEnvironmentConnectivityOut: TRUE
+GLUE2ExecutionEnvironmentComputingManagerForeignKey: FK
+
+# All attributes example
+dn: GLUE2ResourceID=testExecutionEnvironment,o=glue
+objectClass: GLUE2Resource
+objectClass: GLUE2ExecutionEnvironment
+GLUE2ResourceID: testExecutionEnvironment
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2ExecutionEnvironmentPlatform: Type
+GLUE2ExecutionEnvironmentVirtualMachine: TRUE
+GLUE2ExecutionEnvironmentTotalInstances: 0
+GLUE2ExecutionEnvironmentUsedInstances: 0
+GLUE2ExecutionEnvironmentUnavailableInstances: 0
+GLUE2ExecutionEnvironmentPhysicalCPUs: 0
+GLUE2ExecutionEnvironmentLogicalCPUs: 0
+GLUE2ExecutionEnvironmentCPUMultiplicity: Type
+GLUE2ExecutionEnvironmentCPUVendor: String
+GLUE2ExecutionEnvironmentCPUModel: String
+GLUE2ExecutionEnvironmentCPUVersion: String
+GLUE2ExecutionEnvironmentCPUClockSpeed: 800
+GLUE2ExecutionEnvironmentCPUTimeScalingFactor: 0.0
+GLUE2ExecutionEnvironmentWallTimeScalingFactor: 0.0
+GLUE2ExecutionEnvironmentMainMemorySize: 0
+GLUE2ExecutionEnvironmentVirtualMemorySize: 0
+GLUE2ExecutionEnvironmentOSFamily: Type
+GLUE2ExecutionEnvironmentOSName: Type
+GLUE2ExecutionEnvironmentOSVersion: String
+GLUE2ExecutionEnvironmentConnectivityIn: TRUE
+GLUE2ExecutionEnvironmentConnectivityOut: TRUE
+GLUE2ExecutionEnvironmentNetworkInfo: Type
+GLUE2ExecutionEnvironmentComputingManagerForeignKey: FK

@@ -1,0 +1,28 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 7.6 StorageShareCapacity
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# StorageShareCapacity inherits from Entity
+
+# Min attributes example
+dn: GLUE2StorageShareCapacityID=testStorageShareCapacityMin,o=glue
+objectClass: GLUE2StorageShareCapacity
+GLUE2StorageShareCapacityID: testStorageShareCapacityMin
+GLUE2StorageShareCapacityType: Type
+
+# All attributes example
+dn: GLUE2StorageShareCapacityID=testStorageShareCapacity,o=glue
+objectClass: GLUE2StorageShareCapacity
+GLUE2StorageShareCapacityID: testStorageShareCapacity
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2StorageShareCapacityType: Type
+GLUE2StorageShareCapacityTotalSize: 0
+GLUE2StorageShareCapacityFreeSize: 0
+GLUE2StorageShareCapacityUsedSize: 0
+GLUE2StorageShareCapacityReservedSize: 0
+

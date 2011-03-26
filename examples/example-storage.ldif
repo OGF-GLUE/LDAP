@@ -1,0 +1,140 @@
+# Storage Service
+
+dn: GLUE2ServiceId=storage-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Service
+GLUE2ServiceId: storage-service.mysite.com
+GLUE2ServiceCapability: Dummy
+GLUE2ServiceType: Storage
+GLUE2ServiceQualityLevel: Test
+GLUE2ServiceStatusInfo: http://storage-service.mysite.com/get-status
+GLUE2ServiceAdminDomainForeignKey: mysite.com
+
+dn: GLUE2ManagerID=storage-service.mysite.com/manager,GLUE2ServiceId=storage-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Manager
+objectClass: GLUE2StorageManager
+GLUE2ManagerId: storage-service.mysite.com/manager
+GLUE2ManagerProductName: Name
+GLUE2ManagerProductVersion: Version
+GLUE2ManagerServiceForeignKey: storage-service.mysite.com
+GLUE2StorageManagerStorageServiceForeignKey: storage-service.mysite.com
+
+dn: GLUE2StorageServiceCapacityId=storage-service.mysite.com/capacity,GLUE2ServiceId=storage-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2StorageServiceCapacity
+GLUE2StorageServiceCapacityId: storage-service.mysite.com/capacity
+GLUE2StorageServiceCapacityType: Type
+GLUE2StorageServiceCapacityTotalSize: 0
+GLUE2StorageServiceCapacityFreeSize: 0
+GLUE2StorageServiceCapacityUsedSize: 0
+GLUE2StorageServiceCapacityReservedSize: 0
+
+dn: GLUE2StorageAccessProtocolID=storage-service.mysite.com/gsiftp,GLUE2ServiceId=storage-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2StorageAccessProtocol
+GLUE2StorageAccessProtocolID: storage-service.mysite.com/gsiftp
+GLUE2StorageAccessProtocolType: Type
+GLUE2StorageAccessProtocolVersion: String
+GLUE2StorageAccessProtocolMaxStreams: 0
+
+dn: GLUE2EndpointId=storage-service.mysite.com/manage,GLUE2ServiceId=storage-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Endpoint
+objectClass: GLUE2StorageEndpoint
+GLUE2EndpointId: storage-service.mysite.com/manage
+GLUE2EndpointURL: http://storage-service.mysite.com/manage
+GLUE2EndpointCapability: Storage Management
+GLUE2EndpointTechnology: Basic
+GLUE2EndpointInterfaceName: Storage Standard
+GLUE2EndpointInterfaceVersion: 1.0
+GLUE2EndpointInterfaceExtension: URL
+GLUE2EndpointWSDL: URL
+GLUE2EndpointSupportedProfile: URI
+GLUE2EndpointSemantics: URL
+GLUE2EndpointImplementor: Some Vendor
+GLUE2EndpointImplementationName: Some Product
+GLUE2EndpointImplementationVersion: 1.0
+GLUE2EndpointQualityLevel: Example
+GLUE2EndpointHealthState: OK
+GLUE2EndpointHealthStateInfo: No Problems Here
+GLUE2EndpointServingState: Type
+GLUE2EndpointStartTime: 1970-01-01T00:00:00Z
+GLUE2EndpointIssuerCA: Type
+GLUE2EndpointTrustedCA: Type
+GLUE2EndpointDowntimeAnnounce: 1970-01-01T00:00:00Z
+GLUE2EndpointDowntimeStart: 1970-01-01T00:00:00Z
+GLUE2EndpointDowntimeEnd: 1970-01-01T00:00:00Z
+GLUE2EndpointDowntimeInfo: Description
+GLUE2EndpointServiceForeignKey: storage-service.mysite.com
+GLUE2StorageEndpointStorageServiceForeignKey: storage-service.mysite.com
+
+dn: GLUE2PolicyID=testAccessPolicy, GLUE2EndpointId=storage-service.mysite.com/manage,GLUE2ServiceId=storage-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Policy
+objectClass: GLUE2AccessPolicy
+GLUE2PolicyID: testAccessPolicy
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2PolicyScheme: Type
+GLUE2PolicyRule: myRule
+GLUE2PolicyUserDomainForeignKey: myVO
+GLUE2AccessPolicyEndpointForeignKey: storage-service.mysite.com/manage
+
+dn: GLUE2ShareId=storage-service.mysite.com/myvo,GLUE2ServiceId=storage-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Share
+objectClass: GLUE2StorageShare
+GLUE2ShareId: storage-service.mysite.com/myvo
+GLUE2ShareDescription: Description
+GLUE2StorageShareServingState: Type
+GLUE2StorageSharePath: String
+GLUE2StorageShareAccessMode: Type
+GLUE2StorageShareSharingID: Type
+GLUE2StorageShareAccessLatency: Type
+GLUE2StorageShareRetentionPolicy: Type
+GLUE2StorageShareExpirationMode: Type
+GLUE2StorageShareDefaultLifeTime: 0
+GLUE2StorageShareMaximumLifeTime: 0
+GLUE2StorageShareTag: String
+GLUE2ShareServiceForeignKey: storage-service.mysite.com
+GLUE2StorageShareStorageServiceForeignKey: storage-service.mysite.com
+
+dn: GLUE2PolicyID=testMappingPolicy,GLUE2ShareId=storage-service.mysite.com/myvo,GLUE2ServiceId=storage-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Policy
+objectClass: GLUE2MappingPolicy
+GLUE2PolicyID: testMappingPolicy
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2PolicyScheme: Type
+GLUE2PolicyRule: myRule
+GLUE2PolicyUserDomainForeignKey: myVO
+GLUE2MappingPolicyShareForeignKey: storage-service.mysite.com/myvo
+
+
+dn: GLUE2StorageShareCapacityID=storage-service.mysite.com/myvo/capacity,GLUE2ShareId=storage-service.mysite.com/myvo,GLUE2ServiceId=storage-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2StorageShareCapacity
+GLUE2StorageShareCapacityID: storage-service.mysite.com/myvo/capacity
+GLUE2StorageShareCapacityType: Type
+GLUE2StorageShareCapacityTotalSize: 0
+GLUE2StorageShareCapacityFreeSize: 0
+GLUE2StorageShareCapacityUsedSize: 0
+GLUE2StorageShareCapacityReservedSize: 0
+GLUE2StorageShareCapacityStorageShareForeignKey: storage-service.mysite.com/myvo
+
+dn: GLUE2ResourceId=storage-service.mysite.com/datastore,GLUE2ServiceId=storage-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Resource
+objectClass: GLUE2DataStore
+GLUE2ResourceId: storage-service.mysite.com/datastore
+GLUE2DataStoreType: Type
+GLUE2DataStoreLatency: 0
+GLUE2DataStoreTotalSize: 0
+GLUE2DataStoreFreeSize: 0
+GLUE2DataStoreUsedSize: 0
+GLUE2ResourceManagerForeignKey: storage-service.mysite.com
+GLUE2DataStoreStorageManagerForeignKey: storage-service.mysite.com
+
+dn: GLUE2ToComputingServiceId=someuniqueId,GLUE2ServiceId=storage-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2ToComputingService
+GLUE2ToComputingServiceId: someuniqueId
+GLUE2ToComputingServiceNetworkInfo: Type
+GLUE2ToComputingServiceBandwidth: 0
+GLUE2ToComputingServiceComputingServiceForeignKey: compute-service.mysite.com
+GLUE2ToComputingServiceStorageServiceForeignKey: storage-service.mysite.com

@@ -1,0 +1,21 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 5.11 Activity
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# Activity inherits from Entity
+
+# Min attributes example
+dn: GLUE2ActivityID=testActivityMin,o=glue
+objectClass: GLUE2Activity
+GLUE2ActivityID: testActivityMin
+
+# All attributes example
+dn: GLUE2ActivityID=testActivity,o=glue
+objectClass: GLUE2Activity
+GLUE2ActivityID: testActivity
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
