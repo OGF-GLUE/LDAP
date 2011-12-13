@@ -9,9 +9,9 @@
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.1
         NAME 'GLUE2ExecutionEnvironmentPlatform'
         DESC 'The architecture platform of this execution environment'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -78,36 +78,36 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.8
         NAME 'GLUE2ExecutionEnvironmentCPUMultiplicity'
         DESC 'Information about the multiplicity of both physical CPUs and
 	cores available in an execution environment instance'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.9
         NAME 'GLUE2ExecutionEnvironmentCPUVendor'
         DESC 'Name of the physical CPU vendor'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.10
         NAME 'GLUE2ExecutionEnvironmentCPUModel'
         DESC 'Physical CPU model as defined by the vendor'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.11
         NAME 'GLUE2ExecutionEnvironmentCPUVersion'
         DESC 'Physical CPU version as defined by the vendor'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -125,9 +125,9 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.13
         DESC 'Factor used by the  Manager (i.e., LRMS) to scale the CPU time
 	(CPU Time divided by CPUTimeScalingFactor); for the reference execution
 	environment, this attribute is equal to 1'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -135,9 +135,9 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.14
         NAME 'GLUE2ExecutionEnvironmentWallTimeScalingFactor'
         DESC 'Factor used by the  Manager (i.e., LRMS) to scale the Wall time
 	(Wall Time divided by WallTimeScalingFactor)'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -163,27 +163,27 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.16
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.17
         NAME 'GLUE2ExecutionEnvironmentOSFamily'
         DESC 'Family of the operating system'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15        
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26        
         SINGLE-VALUE
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.18
         NAME 'GLUE2ExecutionEnvironmentOSName'
         DESC 'Name of the operating system'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.19
         NAME 'GLUE2ExecutionEnvironmentOSVersion'
         DESC 'Version of the operating system'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -207,17 +207,17 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.22
         NAME 'GLUE2ExecutionEnvironmentNetworkInfo'
         DESC 'Type of internal network available among the execution
 	environment instances'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.23
         NAME 'GLUE2ExecutionEnvironmentComputingManagerForeignKey'
         DESC 'ForeignKey' 
-        EQUALITY caseExactMatch 
-        SUBSTR caseExactSubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match 
+        SUBSTR caseExactIA5SubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -233,8 +233,7 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.6.6
 	GLUE2ExecutionEnvironmentMainMemorySize $ 
 	GLUE2ExecutionEnvironmentOSFamily $
 	GLUE2ExecutionEnvironmentConnectivityIn $
-	GLUE2ExecutionEnvironmentConnectivityOut $
-	GLUE2ExecutionEnvironmentComputingManagerForeignKey )
+	GLUE2ExecutionEnvironmentConnectivityOut )
         MAY ( GLUE2ExecutionEnvironmentVirtualMachine $
 	GLUE2ExecutionEnvironmentTotalInstances $
 	GLUE2ExecutionEnvironmentUsedInstances $
@@ -251,6 +250,7 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.6.6
 	GLUE2ExecutionEnvironmentVirtualMemorySize $ 
 	GLUE2ExecutionEnvironmentOSName $
 	GLUE2ExecutionEnvironmentOSVersion $ 
-	GLUE2ExecutionEnvironmentNetworkInfo )
+	GLUE2ExecutionEnvironmentNetworkInfo $
+	GLUE2ExecutionEnvironmentComputingManagerForeignKey )
  )
 

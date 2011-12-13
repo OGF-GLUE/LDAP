@@ -9,9 +9,9 @@
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.1
         NAME 'GLUE2ServiceID'
         DESC 'Globally unique ID'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -20,17 +20,17 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.2
         DESC 'The provided capability according to the OGSA architecture (it is
 	given by the sum of all the capabilities provided by the related
 	endpoints)'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.3
         NAME 'GLUE2ServiceType'
         DESC 'The type of service according to a middleware classification'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -38,18 +38,18 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.4
         NAME 'GLUE2ServiceQualityLevel'
         DESC 'Maturity of the service in terms of quality of the software
 	components'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.5
         NAME 'GLUE2ServiceStatusInfo'
         DESC 'A URL providing additional information like monitoring aspects' 
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.6
@@ -57,26 +57,26 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.6
         DESC 'Human-readable summary description of the complexity in terms of
 	the number of endpoint types, shares and resources. The syntax should 
 	be: EndpointType=X, Share=Y, Resource=Z.'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.11
         NAME 'GLUE2ServiceAdminDomainForeignKey'
         DESC 'ForeignKey' 
-        EQUALITY caseExactMatch 
-        SUBSTR caseExactSubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match 
+        SUBSTR caseExactIA5SubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.12
         NAME 'GLUE2ServiceServiceForeignKey' 
         DESC 'ForeignKey' 
-        EQUALITY caseExactMatch 
-        SUBSTR caseExactSubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match 
+        SUBSTR caseExactIA5SubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
 objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.6

@@ -9,18 +9,18 @@
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.1
         NAME 'GLUE2StorageServiceCapacityID'
         DESC 'Globally unique ID'
-	EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+	EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.2
         NAME 'GLUE2StorageServiceCapacityType'
         DESC 'Type of storage capacity'
-	EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+	EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -63,9 +63,9 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.6
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.7
         NAME 'GLUE2StorageServiceCapacityStorageServiceForeignKey' 
         DESC 'ForeignKey' 
-        EQUALITY caseExactMatch 
-        SUBSTR caseExactSubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match 
+        SUBSTR caseExactIA5SubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -76,11 +76,11 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.7.2
 	extent'
 	STRUCTURAL
         MUST ( GLUE2StorageServiceCapacityID $ 
-	GLUE2StorageServiceCapacityType )
+	GLUE2StorageServiceCapacityType $
+	GLUE2StorageServiceCapacityStorageServiceForeignKey )
         MAY ( GLUE2StorageServiceCapacityTotalSize $
 	GLUE2StorageServiceCapacityFreeSize $ 
 	GLUE2StorageServiceCapacityUsedSize $
-	GLUE2StorageServiceCapacityReservedSize $
-	GLUE2StorageServiceCapacityStorageServiceForeignKey )
+	GLUE2StorageServiceCapacityReservedSize )
  )
 

@@ -85,18 +85,18 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.9
         NAME 'GLUE2ComputingManagerNetworkInfo'
         DESC 'Type of internal network available among all the managed
 	execution environment instances'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.10
         NAME 'GLUE2ComputingManagerLogicalCPUDistribution'
         DESC 'Syntax: X1:Y1, …, Xn:Yn where Xi is the number of logical CPUs
 	and Yi is the number of boxes for the execution environment i'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -218,9 +218,9 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.21
 	environment instance (i.e., worker node). This directory must be 
 	available to programs using the normal file access primitives 
 	(open/read/write/close)'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -232,9 +232,9 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.22
 	MPI applications or to store intermediate files that need further 
 	processing by local jobs or as staging area, specially if the execution 
 	environment instances have no Internet connectivity'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -243,18 +243,18 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.23
         DESC 'The path of the directory available for application installation.
 	 Typically a PO-SIX accessible disk space with transient to permanent
 	 allocation to the users'
-        EQUALITY caseExactMatch
-        SUBSTR caseExactSubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.24
         NAME 'GLUE2ComputingManagerComputingServiceForeignKey'
         DESC 'ForeignKey' 
-        EQUALITY caseExactMatch 
-        SUBSTR caseExactSubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+        EQUALITY caseExactIA5Match 
+        SUBSTR caseExactIA5SubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
         SINGLE-VALUE
  )
 
@@ -265,7 +265,6 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.6.4
 	managed resources. The computing manager is also known as Local 
 	Resource Management System (LRMS).'
         AUXILIARY
-	MUST GLUE2ComputingManagerComputingServiceForeignKey
         MAY ( GLUE2ComputingManagerReservation $
 	GLUE2ComputingManagerBulkSubmission $ 
 	GLUE2ComputingManagerTotalPhysicalCPUs $
@@ -286,5 +285,6 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.6.4
 	GLUE2ComputingManagerWorkingAreaMultiSlotLifeTime $
 	GLUE2ComputingManagerCacheTotal $ GLUE2ComputingManagerCacheFree $
 	GLUE2ComputingManagerTmpDir $ GLUE2ComputingManagerScratchDir $
-	GLUE2ComputingManagerApplicationDir )
+	GLUE2ComputingManagerApplicationDir $
+        GLUE2ComputingManagerComputingServiceForeignKey )
  )

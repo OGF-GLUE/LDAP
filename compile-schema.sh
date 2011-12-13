@@ -14,7 +14,7 @@
 `unalias -a` # Remove all aliases from this new shell
 STARTTIME=`date +%s`
 VERSION='0.2'
-COPYRIGHT='copyright.txt'
+COPYRIGHT='LICENSE'
 
 # Parameters (Adapt them to your needs)
 INPUTDIR='schema'
