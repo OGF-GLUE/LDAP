@@ -7,7 +7,7 @@
 
 # Domain <<abstract>> inherits from Entity
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.1
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.1
         NAME 'GLUE2DomainID'
         DESC 'A description of the domain' 
         EQUALITY caseExactIA5Match 
@@ -16,7 +16,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.1
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.2
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.2
         NAME 'GLUE2DomainDescription' 
         DESC 'A description of the domain' 
         EQUALITY caseExactIA5Match 
@@ -25,7 +25,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.2
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.3
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.3
         NAME 'GLUE2DomainWWW' 
         DESC 'The URL identifying a web page with more information about the
 	domain'
@@ -34,7 +34,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.3
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
  )
 
-objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.5.5
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.5
         NAME 'GLUE2Domain' 
         SUP GLUE2Entity
         DESC 'A Domain' 
@@ -46,7 +46,7 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.5.5
 #########################################################
 # AdminDomain inherits from Domain
 #########################################################
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.7.1 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1 
         NAME 'GLUE2AdminDomainDistributed' 
         DESC 'True if the services managed by the AdminDomain are considered
 	geographically distributed by the administrators themselves'
@@ -55,7 +55,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.7.1
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.7.2
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.2
         NAME 'GLUE2AdminDomainOwner'
         DESC 'Owner of the managed resources'
         EQUALITY caseExactIA5Match
@@ -63,7 +63,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.7.2
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.7.4
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4
         NAME 'GLUE2AdminDomainAdminDomainForeignKey'
         DESC 'ForeignKey'
         EQUALITY caseExactIA5Match
@@ -71,7 +71,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.7.4
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
-objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.5.7
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.6
         NAME 'GLUE2AdminDomain' 
         DESC 'A collection of actors that can be assigned with administrative
 	roles and privileges to services via policies. An AdminDomain manages 
@@ -86,7 +86,7 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.5.7
 ################################################
 # UserDomain inherits from Domain
 ################################################
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.8.1 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.1 
         NAME 'GLUE2UserDomainLevel' 
         DESC 'The number of hops to reach the root for hierarchically organized
 	domains described by the composed by association (0 is for the root).'
@@ -94,7 +94,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.8.1
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.8.2 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2 
         NAME 'GLUE2UserDomainUserManager' 
         DESC 'The Endpoint ID managing the users part of the domain and the
 	related attributes such as groups or roles'
@@ -103,7 +103,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.8.2
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.8.3 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.3 
         NAME 'GLUE2UserDomainMember' 
         DESC 'An identifier for a user in this user domain' 
         EQUALITY caseExactIA5Match 
@@ -111,7 +111,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.8.3
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.8.5
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5
         NAME 'GLUE2UserDomainUserDomainForeignKey'
         DESC 'ForeignKey' 
         EQUALITY caseExactIA5Match 
@@ -119,7 +119,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.5.8.5
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
-objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.5.8
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.7
         NAME 'GLUE2UserDomain' 
         DESC 'A collection of actors that can be assigned with user roles and
 	privileges to services or shares via policies'
