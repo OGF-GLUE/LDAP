@@ -1,0 +1,51 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 6.4 ComputingManager
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# ComputingManager inherits from Manager
+
+# Min attributes example
+dn: GLUE2ManagerID=testComputingManagerMin,o=glue
+objectClass: GLUE2Manager
+objectClass: GLUE2ComputingManager
+GLUE2ManagerID: testComputingManagerMin
+GLUE2ManagerProductName: Name
+GLUE2ComputingManagerComputingServiceForeignKey: FK
+
+# All attributes example
+dn: GLUE2ManagerID=testComputingManager,o=glue
+objectClass: GLUE2Manager
+objectClass: GLUE2ComputingManager
+GLUE2ManagerID: testComputingManager
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2ManagerProductName: Name
+GLUE2ManagerProductVersion: 1.0
+GLUE2ComputingManagerReservation: TRUE
+GLUE2ComputingManagerBulkSubmission: TRUE
+GLUE2ComputingManagerTotalPhysicalCPUs: 0
+GLUE2ComputingManagerTotalLogicalCPUs: 0
+GLUE2ComputingManagerTotalSlots: 0
+GLUE2ComputingManagerSlotsUsedByLocalJobs: 0
+GLUE2ComputingManagerSlotsUsedByGridJobs: 0
+GLUE2ComputingManagerHomogeneous: TRUE
+GLUE2ComputingManagerNetworkInfo: Type
+GLUE2ComputingManagerLogicalCPUDistribution: String
+GLUE2ComputingManagerWorkingAreaShared: TRUE
+GLUE2ComputingManagerWorkingAreaGuaranteed: TRUE
+GLUE2ComputingManagerWorkingAreaTotal: 0
+GLUE2ComputingManagerWorkingAreaFree: 0
+GLUE2ComputingManagerWorkingAreaLifeTime: 0
+GLUE2ComputingManagerWorkingAreaMultiSlotTotal: 0
+GLUE2ComputingManagerWorkingAreaMultiSlotFree: 0
+GLUE2ComputingManagerWorkingAreaMultiSlotLifeTime: 0
+GLUE2ComputingManagerCacheTotal: 0
+GLUE2ComputingManagerCacheFree: 0
+GLUE2ComputingManagerTmpDir: String
+GLUE2ComputingManagerScratchDir: String
+GLUE2ComputingManagerApplicationDir: String
+GLUE2ComputingManagerComputingServiceForeignKey: FK

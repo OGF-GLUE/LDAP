@@ -1,0 +1,29 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 6.10 ToStorageService
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# ToStorageService inherits from Entity
+
+# Min attributes example
+dn: GLUE2ToStorageServiceID=testToStorageServiceMin,o=glue
+objectClass: GLUE2ToStorageService
+GLUE2ToStorageServiceID: testToStorageServiceMin
+GLUE2ToStorageServiceLocalPath: String
+GLUE2ToStorageServiceRemotePath: String
+GLUE2ToStorageServiceComputingServiceForeignKey: FK
+GLUE2ToStorageServiceStorageServiceForeignKey: FK
+
+# All attributes example
+dn: GLUE2ToStorageServiceID=testToStorageService,o=glue
+objectClass: GLUE2ToStorageService
+GLUE2ToStorageServiceID: testToStorageService
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2ToStorageServiceLocalPath: String
+GLUE2ToStorageServiceRemotePath: String
+GLUE2ToStorageServiceComputingServiceForeignKey: FK
+GLUE2ToStorageServiceStorageServiceForeignKey: FK

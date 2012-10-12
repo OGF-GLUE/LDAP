@@ -1,0 +1,38 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 6.1 ComputingService
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# ComputingService inherits from Service
+
+# Min attributes example
+dn: GLUE2ServiceID=testComputingServiceMin,o=glue
+objectClass: GLUE2Service
+objectClass: GLUE2ComputingService
+GLUE2ServiceID: testComputingServiceMin
+GLUE2ServiceType: Type
+GLUE2ServiceQualityLevel: Type
+GLUE2ServiceAdminDomainForeignKey: FK
+
+# All attributes example
+dn: GLUE2ServiceID=testComputingService,o=glue
+objectClass: GLUE2Service
+objectClass: GLUE2ComputingService
+GLUE2ServiceID: testComputingService
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2ServiceCapability: Type
+GLUE2ServiceType: Type
+GLUE2ServiceQualityLevel: Type
+GLUE2ServiceStatusInfo: http://cern.ch
+GLUE2ServiceComplexity: myDescription
+GLUE2ComputingServiceTotalJobs: 0
+GLUE2ComputingServiceRunningJobs: 0
+GLUE2ComputingServiceWaitingJobs: 0
+GLUE2ComputingServiceStagingJobs: 0
+GLUE2ComputingServiceSuspendedJobs: 0
+GLUE2ComputingServicePreLRMSWaitingJobs: 0
+GLUE2ServiceAdminDomainForeignKey: FK

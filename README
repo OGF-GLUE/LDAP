@@ -1,0 +1,84 @@
+************** GLUE 2.0 LDAP implementation ***************
+  URL:     http://forge.gridforum.org/sf/projects/glue-wg
+  Authors: David Horat (david.horat@cern.ch), CERN
+           Laurence Field (laurence.field@cern.ch), CERN
+***********************************************************
++++++++++++++++++++++++++++
+Version history
++++++++++++++++++++++++++++
+v0.1 - Initial release. 25/03/2009
+v0.2 - OID and description corrections. Relationship implementation. 30/03/2009
+v0.3 - New version with changes agreed by the comunity. 25/05/2009
+
++++++++++++++++++++++++++++
+  Synopsis
++++++++++++++++++++++++++++
+  GLUE 2.0 LDAP implementation is an LDAP implementation of the GLUE 2.0 grid
+interoperability specifications which can be found at [1]. This package intends
+to cover all schemas needed and ldif test files for each object. Moreover, it
+will include the necessary scripts to automate both its usage and tests.
+
++++++++++++++++++++++++++++
+File description
++++++++++++++++++++++++++++
+Files included in the package:
+ldif/			Directory where all LDIF files for testing are stored
+  00-Setup.ldif 	LDIF file that setups the environment for all testing
+  *.ldif		LDIF files for each object in the specification
+  99-TearDown.td	DN of all objects created in the tests
+schema/			Directory containing all the LDAP schemas
+  *.schema		LDAP schemas for development purposes
+compile-schema.sh	Script to compile all schemas into a single file
+README			This file
+takeOffGluePrefix.sh	Script used to take off the 'Glue' prefix from all files
+test-ldif.sh		Script to test all LDIF files
+
+Files created when executing scripts:
+GLUE20.schema		The file created by compile-schema.sh
+GLUE20.schema.bak	Backup copy of the last version of the schemas
+test-ldif.log		Log of the test-ldif.sh script
+
++++++++++++++++++++++++++++
+Getting started
++++++++++++++++++++++++++++
+This package is meant to be tested in an empty LDAP server with a database
+called 'o=grid'.
+
+1) compile-schema.sh
+Change directory to where this file is located and execute it. It will output
+a file called 'GLUE20.schema' which is a compilation of all schemas under the
+schema/ directory. If the file 'GLUE20.schema' already exists, it will copy it
+into 'GLUE20.schema.bak'.
+
+2) Schema debugging example with OpenLDAP and Ubuntu
+# Create a dir to hold the schemas
+sudo mkdir /etc/ldap/schema/glue/
+# Copy the schema files to your schemas directory
+sudo cp *.schema /etc/ldap/schema/glue/
+# Edit your OpenLDAP config file and add lines like
+# include /etc/ldap/schema/glue/5-01-Entity.schema
+sudo nano /etc/ldap/ldap.conf
+# Stop any OpenLDAP running on your system
+sudo killall slapd
+# Execute OpenLDAP using that config file
+sudo slapd -f /etc/ldap/ldap.conf
+# View the logs
+tail -n 20 /var/log/syslog
+
+3) test-ldif.sh
+It will add all LDIF files under the ldif/ directory into an LDAP server
+in localhost with the default password 'secret'. Then it will delete all
+the tests putting the server in its original state. All logs are kept into
+the log file 'test-ldif.log'.
+
+4) Testing single files
+- You should always load first the setup LDIF file:
+ldapadd -x -D "o=grid" -w secret -h localhost -v -f 00-Setup.ldif
+- Then you can test any file, for example "5-03-Location.ldif":
+ldapadd -x -D "o=grid" -w secret -h localhost -v -f 5-03-Location.ldif
+- After, you should run the tear down file:
+ldapdelete -x -D "o=grid" -w secret -h localhost -v -f 99-TearDown.td
+
+NOTE: If the default values do not fit your needs, feel free to edit the scripts
+and change them. It is easy to do! :)
+

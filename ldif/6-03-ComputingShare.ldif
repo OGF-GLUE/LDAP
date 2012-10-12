@@ -1,0 +1,71 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 6.3 ComputingShare
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# ComputingShare inherits from Share
+
+# Min attributes example
+dn: GLUE2ShareID=testComputingShareMin,o=glue
+objectClass: GLUE2Share
+objectClass: GLUE2ComputingShare
+GLUE2ShareID: testComputingShareMin
+GLUE2ComputingShareServingState: Type
+GLUE2ComputingShareComputingServiceForeignKey: FK
+
+# All attributes example
+dn: GLUE2ShareID=testComputingShare,o=glue
+objectClass: GLUE2Share
+objectClass: GLUE2ComputingShare
+GLUE2ShareID: testComputingShare
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2ShareDescription: My Description
+GLUE2ComputingShareMappingQueue: Queue
+GLUE2ComputingShareMaxWallTime: 0
+GLUE2ComputingShareMaxMultiSlotWallTime: 0
+GLUE2ComputingShareMinWallTime: 0
+GLUE2ComputingShareDefaultWallTime: 0
+GLUE2ComputingShareMaxCPUTime: 0
+GLUE2ComputingShareMaxTotalCPUTime: 0
+GLUE2ComputingShareMinCPUTime: 0
+GLUE2ComputingShareDefaultCPUTime: 0
+GLUE2ComputingShareMaxTotalJobs: 0
+GLUE2ComputingShareMaxRunningJobs: 0
+GLUE2ComputingShareMaxWaitingJobs: 0
+GLUE2ComputingShareMaxPreLRMSWaitingJobs: 0
+GLUE2ComputingShareMaxUserRunningJobs: 0
+GLUE2ComputingShareMaxSlotsPerJob: 0
+GLUE2ComputingShareMaxStageInStreams: 0
+GLUE2ComputingShareMaxStageOutStreams: 0
+GLUE2ComputingShareSchedulingPolicy: Type
+GLUE2ComputingShareMaxMainMemory: 0
+GLUE2ComputingShareGuaranteedMainMemory: 0
+GLUE2ComputingShareMaxVirtualMemory: 0
+GLUE2ComputingShareGuaranteedVirtualMemory: 0
+GLUE2ComputingShareMaxDiskSpace: 0
+GLUE2ComputingShareDefaultStorageService: 0
+GLUE2ComputingSharePreemption: TRUE
+GLUE2ComputingShareServingState: Type
+GLUE2ComputingShareTotalJobs: 0
+GLUE2ComputingShareRunningJobs: 0
+GLUE2ComputingShareLocalRunningJobs: 0
+GLUE2ComputingShareWaitingJobs: 0
+GLUE2ComputingShareLocalWaitingJobs: 0
+GLUE2ComputingShareSuspendedJobs: 0
+GLUE2ComputingShareLocalSuspendedJobs: 0
+GLUE2ComputingShareStagingJobs: 0
+GLUE2ComputingShareLocalStagingJobs: 0
+GLUE2ComputingSharePreLRMSWaitingJobs: 0
+GLUE2ComputingShareEstimatedAverageWaitingTime: 0
+GLUE2ComputingShareEstimatedWorstWaitingTime: 0
+GLUE2ComputingShareFreeSlots: 0
+GLUE2ComputingShareFreeSlotsWithDuration: Syntax
+GLUE2ComputingShareUsedSlots: 0
+GLUE2ComputingShareRequestedSlots: 0
+GLUE2ComputingShareReservationPolicy: Type
+GLUE2ComputingShareTag: My Tag
+GLUE2ComputingShareComputingServiceForeignKey: FK

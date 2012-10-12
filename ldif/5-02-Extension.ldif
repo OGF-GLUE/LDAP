@@ -1,0 +1,15 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 5.2 Extension
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# Extension
+
+dn: GLUE2ExtensionLocalID=testExtension,o=glue
+objectClass: GLUE2Extension
+GLUE2ExtensionLocalID: testExtension
+GLUE2ExtensionKey: myKey
+GLUE2ExtensionValue: myValue
+GLUE2ExtensionEntityForeignKey: FK
+

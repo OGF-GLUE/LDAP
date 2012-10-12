@@ -1,0 +1,100 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 5.6 Service
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# Service inherits from Entity
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.1
+        NAME 'GLUE2ServiceID'
+        DESC 'Globally unique ID'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.2
+        NAME 'GLUE2ServiceCapability'
+        DESC 'The provided capability according to the OGSA architecture (it is
+	given by the sum of all the capabilities provided by the related
+	endpoints)'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.3
+        NAME 'GLUE2ServiceType'
+        DESC 'The type of service according to a middleware classification'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.4
+        NAME 'GLUE2ServiceQualityLevel'
+        DESC 'Maturity of the service in terms of quality of the software
+	components'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.5
+        NAME 'GLUE2ServiceStatusInfo'
+        DESC 'A URL providing additional information like monitoring aspects' 
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.6
+        NAME 'GLUE2ServiceComplexity'
+        DESC 'Human-readable summary description of the complexity in terms of
+	the number of endpoint types, shares and resources. The syntax should 
+	be: EndpointType=X, Share=Y, Resource=Z.'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.11
+        NAME 'GLUE2ServiceAdminDomainForeignKey'
+        DESC 'ForeignKey' 
+        EQUALITY caseExactIA5Match 
+        SUBSTR caseExactIA5SubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.12
+        NAME 'GLUE2ServiceServiceForeignKey' 
+        DESC 'ForeignKey' 
+        EQUALITY caseExactIA5Match 
+        SUBSTR caseExactIA5SubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.6
+        NAME 'GLUE2Service'
+        SUP GLUE2Entity
+        DESC 'An abstracted, logical view of actual software components that
+	participate in the creation of an entity providing one or more 
+	functionalities useful in a Grid environment. A service exposes zero or
+	more endpoints having well-defined interfaces, zero or more shares and 
+	zero or more managers and the related resources. The service is 
+	autonomous and denotes a weak aggregation among endpoints, the 
+	underlying managers and the related resources, and the defined shares. 
+	The service enables to identify the whole set of entities providing the
+	functionality with a persistent name.'
+        STRUCTURAL 
+        MUST ( GLUE2ServiceID $ GLUE2ServiceType $ GLUE2ServiceQualityLevel $
+	GLUE2ServiceAdminDomainForeignKey )        
+	MAY ( GLUE2ServiceCapability $ GLUE2ServiceStatusInfo $
+	GLUE2ServiceComplexity $ GLUE2ServiceServiceForeignKey )
+ )
+

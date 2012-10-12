@@ -1,0 +1,51 @@
+# Generic Service
+
+dn: GLUE2ServiceId=generic-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Service
+GLUE2ServiceId: generic-service.mysite.com
+GLUE2ServiceCapability: Dummy
+GLUE2ServiceType: Generic
+GLUE2ServiceQualityLevel: Test
+GLUE2ServiceStatusInfo: http://generic-service.mysite.com/get-status
+GLUE2ServiceAdminDomainForeignKey: mysite.com
+
+dn: GLUE2EndpointId=generic-service.mysite.com/manage,GLUE2ServiceId=generic-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Endpoint
+GLUE2EndpointId: generic-service.mysite.com/manage
+GLUE2EndpointURL: http://generic-service.mysite.com/manage
+GLUE2EndpointCapability: Generic Management
+GLUE2EndpointTechnology: Basic
+GLUE2EndpointInterfaceName: Generic Standard
+GLUE2EndpointInterfaceVersion: 1.0
+GLUE2EndpointInterfaceExtension: URL
+GLUE2EndpointWSDL: URL
+GLUE2EndpointSupportedProfile: URI
+GLUE2EndpointSemantics: URL
+GLUE2EndpointImplementor: Some Vendor
+GLUE2EndpointImplementationName: Some Product
+GLUE2EndpointImplementationVersion: 1.0
+GLUE2EndpointQualityLevel: Example
+GLUE2EndpointHealthState: OK
+GLUE2EndpointHealthStateInfo: No Problems Here
+GLUE2EndpointServingState: Type
+GLUE2EndpointStartTime: 1970-01-01T00:00:00Z
+GLUE2EndpointIssuerCA: Type
+GLUE2EndpointTrustedCA: Type
+GLUE2EndpointDowntimeAnnounce: 1970-01-01T00:00:00Z
+GLUE2EndpointDowntimeStart: 1970-01-01T00:00:00Z
+GLUE2EndpointDowntimeEnd: 1970-01-01T00:00:00Z
+GLUE2EndpointDowntimeInfo: Description
+GLUE2EndpointServiceForeignKey: generic-service.mysite.com
+
+dn: GLUE2PolicyID=testAccessPolicy, GLUE2EndpointId=generic-service.mysite.com/manage,GLUE2ServiceId=generic-service.mysite.com,GLUE2DomainId=mysite.com,o=GLUE
+objectClass: GLUE2Policy
+objectClass: GLUE2AccessPolicy
+GLUE2PolicyID: testAccessPolicy
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2PolicyScheme: Type
+GLUE2PolicyRule: myRule
+GLUE2PolicyUserDomainForeignKey: org.myVO
+GLUE2AccessPolicyEndpointForeignKey: generic-service.mysite.com/manage

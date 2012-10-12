@@ -1,0 +1,254 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 5.7 Endpoint
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# Endpoint inherits from Entity
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.1
+        NAME 'GLUE2EndpointID'
+        DESC 'Globally unique ID'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.2
+        NAME 'GLUE2EndpointURL'
+        DESC 'Network location of the endpoint to contact the related service'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.3
+        NAME 'GLUE2EndpointCapability'
+        DESC 'The provided capability according to the OGSA architecture'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.4
+        NAME 'GLUE2EndpointTechnology'
+        DESC 'Technology used to implement the endpoint'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.5
+        NAME 'GLUE2EndpointInterfaceName'
+        DESC 'Identification of a type and version of the interface'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.6
+        NAME 'GLUE2EndpointInterfaceVersion'
+        DESC 'The version of the primary interface protocol'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.7
+        NAME 'GLUE2EndpointInterfaceExtension'
+        DESC 'Identification of an extension to the interface'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.8
+        NAME 'GLUE2EndpointWSDL'
+        DESC 'URL of the WSDL document describing the offered interface
+	(applies to Web Services endpoint)'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.9
+        NAME 'GLUE2EndpointSupportedProfile'
+        DESC 'URI identifying a supported profile'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.10
+        NAME 'GLUE2EndpointSemantics'
+        DESC 'URI of a document providing a human-readable description of the
+	semantics of the endpoint functionalities'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.11
+        NAME 'GLUE2EndpointImplementor'
+        DESC 'Main organization implementing this software component'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.12
+        NAME 'GLUE2EndpointImplementationName'
+        DESC 'Name of the implementation'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.13
+        NAME 'GLUE2EndpointImplementationVersion'
+        DESC 'Version of the implementation (e.g., major version.minor
+	version.patch version)'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.14
+        NAME 'GLUE2EndpointQualityLevel'
+        DESC 'Maturity of the endpoint in terms of quality of the software
+	components'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.15
+        NAME 'GLUE2EndpointHealthState'
+        DESC 'A state representing the health of the endpoint in terms of its
+	capability of properly delivering the functionalities'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.16
+        NAME 'GLUE2EndpointHealthStateInfo'
+        DESC 'Textual explanation of the state endpoint'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.17
+        NAME 'GLUE2EndpointServingState'
+        DESC 'A state specifying if the endpoint is accepting new requests and
+	if it is serving the already accepted requests'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.18
+        NAME 'GLUE2EndpointStartTime'
+        DESC 'The timestamp for the start time of the endpoint'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.19
+        NAME 'GLUE2EndpointIssuerCA'
+        DESC 'Distinguished name of Certification Authority issuing the
+	certificate for the endpoint'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.20
+        NAME 'GLUE2EndpointTrustedCA'
+        DESC 'Distinguished name of the trusted Certification Authority'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.21
+        NAME 'GLUE2EndpointDowntimeAnnounce'
+        DESC 'The timestamp for the announcement of the next scheduled
+	downtime'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.22
+        NAME 'GLUE2EndpointDowntimeStart'
+        DESC 'The starting timestamp of the next scheduled downtime'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.23
+        NAME 'GLUE2EndpointDowntimeEnd'
+        DESC 'The ending timestamp of the next scheduled downtime'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.24
+        NAME 'GLUE2EndpointDowntimeInfo'
+        DESC 'Description of the next scheduled downtime'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.7.25
+        NAME 'GLUE2EndpointServiceForeignKey'
+        DESC 'ForeignKey' 
+        EQUALITY caseExactIA5Match 
+        SUBSTR caseExactIA5SubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.7
+        NAME 'GLUE2Endpoint'
+        SUP GLUE2Entity
+        DESC 'A network location having a well-defined interface and exposing
+	the service functionalities'
+        STRUCTURAL
+        MUST ( GLUE2EndpointID $ GLUE2EndpointURL $ GLUE2EndpointInterfaceName
+	$ GLUE2EndpointQualityLevel $ GLUE2EndpointHealthState $
+	GLUE2EndpointServingState $ GLUE2EndpointServiceForeignKey )
+        MAY ( GLUE2EndpointCapability $ GLUE2EndpointTechnology $
+	GLUE2EndpointInterfaceVersion $ GLUE2EndpointInterfaceExtension $
+	GLUE2EndpointWSDL $ GLUE2EndpointSupportedProfile $ 
+	GLUE2EndpointSemantics $ GLUE2EndpointImplementor $ 
+	GLUE2EndpointImplementationName $ GLUE2EndpointImplementationVersion $ 
+	GLUE2EndpointHealthStateInfo $ GLUE2EndpointStartTime $ 
+	GLUE2EndpointIssuerCA $ GLUE2EndpointTrustedCA $ 
+	GLUE2EndpointDowntimeAnnounce $ GLUE2EndpointDowntimeStart $
+	GLUE2EndpointDowntimeEnd $ GLUE2EndpointDowntimeInfo )
+ )

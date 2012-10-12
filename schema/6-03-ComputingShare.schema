@@ -1,0 +1,517 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 6.3 ComputingShare
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# ComputingShare inherits from Share
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.1
+        NAME 'GLUE2ComputingShareMappingQueue'
+        DESC 'Name of a queue available in the underlying computing manager
+	(i.e., LRMS) where jobs of this share are submitted (different shares 
+	can be mapped into the same queue; it is not foreseen that a single 
+	share can be mapped into many different queues)'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.2
+        NAME 'GLUE2ComputingShareMaxWallTime'
+        DESC 'The maximum obtainable wall clock time per slot that can be
+	granted to the job upon user request (unnormalized value)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.3
+        NAME 'GLUE2ComputingShareMaxMultiSlotWallTime'
+        DESC 'The maximum obtainable wall clock time limit that MAY be granted
+	to a multi-slot job upon user request'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.4
+        NAME 'GLUE2ComputingShareMinWallTime'
+	DESC 'The minimum wall clock time per slot for a job (unnormalized 
+	value); if a job requests a lower time, than it can be rejected; if a 
+	job requests at least this value, but runs for a shorter time, than it 
+	might be accounted for this value'
+	EQUALITY    integerMatch
+	ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.5
+        NAME 'GLUE2ComputingShareDefaultWallTime'
+        DESC 'The default wall clock time per slot allowed to a job by the
+	computing manager (i.e., LRMS) if no limit is requested in the job 
+	submission description. Once this time is expired the job will most 
+	likely be killed or removed from the queue (unnormalized value)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.6
+        NAME 'GLUE2ComputingShareMaxCPUTime'
+        DESC 'The maximum obtainable CPU time that can be granted to the job
+	upon user request per slot (unnormalized value)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.7
+        NAME 'GLUE2ComputingShareMaxTotalCPUTime'
+        DESC 'The maximum obtainable CPU time that can be granted to the job
+	upon user request across all assigned slots; this property is a limit 
+	for the sum of the CPU time used in all the slots occupied by a 
+	multi-slot job (unnormalized value)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.8
+        NAME 'GLUE2ComputingShareMinCPUTime'
+        DESC 'The minimum CPU time per slot for a job (unnormalized value); if
+	a job requests a lower time, than it can be rejected; if a job requests 
+	at least this value, but uses the CPU for a shorter time, than it might		be accounted for this value'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.9
+        NAME 'GLUE2ComputingShareDefaultCPUTime'
+        DESC 'The default CPU time per slot allowed to each job by the
+	computing manager (i.e., LRMS ) if no limit is requested in the job 
+	submission description (unnormalized value)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.10
+        NAME 'GLUE2ComputingShareMaxTotalJobs'
+        DESC 'The maximum allowed number of jobs in this share'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.11
+        NAME 'GLUE2ComputingShareMaxRunningJobs'
+        DESC 'The maximum allowed number of jobs in running state in this
+	share'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.12
+        NAME 'GLUE2ComputingShareMaxWaitingJobs'
+        DESC 'The maximum allowed number of jobs in waiting state in this
+	share'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.13
+        NAME 'GLUE2ComputingShareMaxPreLRMSWaitingJobs'
+        DESC 'The maximum allowed number of jobs that are in the Grid layer
+	waiting to be passed to the underlying computing manager (i.e., LRMS) 
+	for this share'        
+	EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.14
+        NAME 'GLUE2ComputingShareMaxUserRunningJobs'
+        DESC 'The maximum allowed number of jobs in running state per Grid user
+	in this share'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.15
+        NAME 'GLUE2ComputingShareMaxSlotsPerJob'
+        DESC 'The maximum number of slots which could be allocated to a single
+	job (defined to be 1 for a computing service accepting only single-slot
+	jobs)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.16
+        NAME 'GLUE2ComputingShareMaxStageInStreams'
+        DESC 'The maximum number of streams to stage files in'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.17
+        NAME 'GLUE2ComputingShareMaxStageOutStreams'
+        DESC 'The maximum number of streams to stage files out'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.18
+        NAME 'GLUE2ComputingShareSchedulingPolicy'
+        DESC 'Implied scheduling policy of the share'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.19
+        NAME 'GLUE2ComputingShareMaxMainMemory'
+        DESC 'The maximum RAM that a job can use'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.20
+        NAME 'GLUE2ComputingShareGuaranteedMainMemory'
+        DESC 'The amount of physical RAM that a job is guaranteed to have
+	available for its use'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.21
+        NAME 'GLUE2ComputingShareMaxVirtualMemory'
+        DESC 'The maximum virtual memory that a job can use'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.22
+        NAME 'GLUE2ComputingShareGuaranteedVirtualMemory'
+        DESC 'The amount of virtual memory that a job is guaranteed to have
+	available for its use'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.23
+        NAME 'GLUE2ComputingShareMaxDiskSpace'
+        DESC 'The maximum disk space that a job can use excluding shared area
+	such as cache'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.24
+        NAME 'GLUE2ComputingShareDefaultStorageService'
+        DESC 'ID of the default Storage Service to be used to store files by
+	jobs in case no destination Storage Service is explicitly stated'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.25
+        NAME 'GLUE2ComputingSharePreemption'
+        DESC 'True if the computing manager (i.e., LRMS) enables preemption of
+	jobs; a preempted job is supposed to be automatically resumed'
+	EQUALITY    booleanMatch
+	SYNTAX      1.3.6.1.4.1.1466.115.121.1.7
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.26
+        NAME 'GLUE2ComputingShareServingState'
+        DESC 'A state specifying if the share is open to place new requests and
+	if it is open to offer the already present requests for execution'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.27
+        NAME 'GLUE2ComputingShareTotalJobs'
+        DESC 'Number of total jobs in any state'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.28
+        NAME 'GLUE2ComputingShareRunningJobs'
+        DESC 'Number of running jobs submitted via any type of interface (local
+	and Grid)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.29
+        NAME 'GLUE2ComputingShareLocalRunningJobs'
+        DESC 'Number of running jobs submitted via a local interface'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.30
+        NAME 'GLUE2ComputingShareWaitingJobs'
+        DESC 'Number of jobs waiting in the underlying computing managers
+	(i.e., LRMS) submitted via any type of interface (local and
+	Grid)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.31
+        NAME 'GLUE2ComputingShareLocalWaitingJobs'
+        DESC 'Number of jobs waiting in the underlying computing managers
+	(i.e., LRMS) submitted via a local interface'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.32
+        NAME 'GLUE2ComputingShareSuspendedJobs'
+        DESC 'Number of jobs which started their execution, but are suspended
+	(e.g., for preemption)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.33
+        NAME 'GLUE2ComputingShareLocalSuspendedJobs'
+        DESC 'Number of local jobs which started their execution, but are
+	suspended (e.g., for preemption)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.34
+        NAME 'GLUE2ComputingShareStagingJobs'
+        DESC 'Number of jobs that are staging files in/out'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.35
+        NAME 'GLUE2ComputingShareLocalStagingJobs'
+        DESC 'Number of local jobs that are staging files in/out'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.36
+        NAME 'GLUE2ComputingSharePreLRMSWaitingJobs'
+        DESC 'Number of jobs that are in the Grid layer waiting to be passed to
+	the underlying computing manager (i.e., LRMS)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.37
+        NAME 'GLUE2ComputingShareEstimatedAverageWaitingTime'
+        DESC 'Estimated time to last for a new job from the acceptance to the
+	start of its execution'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.38
+        NAME 'GLUE2ComputingShareEstimatedWorstWaitingTime'
+        DESC 'Estimated worst waiting time assuming that all jobs run for the
+	maximum wall time'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.39
+        NAME 'GLUE2ComputingShareFreeSlots'
+        DESC 'Number of free slots'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.40
+        NAME 'GLUE2ComputingShareFreeSlotsWithDuration'
+        DESC 'Number of free slots with their time limits. Syntax: ns[:t]
+	[ns:t]* where the pair ns:t means that there are ns free slots for the 
+	duration of t (expressed in seconds); the time limit information is 
+	optional'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.41
+        NAME 'GLUE2ComputingShareUsedSlots'
+        DESC 'Number of slots used by running jobs'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.42
+        NAME 'GLUE2ComputingShareRequestedSlots'
+        DESC 'Number of slots which are needed to execute all waiting and
+	staging jobs'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.43
+        NAME 'GLUE2ComputingShareReservationPolicy'
+        DESC 'Type of reservation policy'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.44
+        NAME 'GLUE2ComputingShareTag'
+        DESC 'UserDomain-defined tag (the values SHOULD use namespace to avoid
+	collision)'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.45
+        NAME 'GLUE2ComputingShareComputingEndpointForeignKey'
+        DESC 'ForeignKey'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.46
+        NAME 'GLUE2ComputingShareExecutionEnvironmentForeignKey'
+        DESC 'ForeignKey'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.3.47
+        NAME 'GLUE2ComputingShareComputingServiceForeignKey'
+        DESC 'ForeignKey'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.6.3
+        NAME 'GLUE2ComputingShare'
+        DESC 'A utilization target for a set of execution environments defined
+	by a set of configuration parameters and characterized by status 
+	information'
+        AUXILIARY
+        MUST ( GLUE2ComputingShareServingState )
+        MAY ( GLUE2ComputingShareMappingQueue $ 
+        GLUE2ComputingShareMaxWallTime $
+	GLUE2ComputingShareMaxMultiSlotWallTime $ 
+	GLUE2ComputingShareMinWallTime $
+	GLUE2ComputingShareDefaultWallTime $ GLUE2ComputingShareMaxCPUTime $
+	GLUE2ComputingShareMaxTotalCPUTime $ GLUE2ComputingShareMinCPUTime $
+	GLUE2ComputingShareDefaultCPUTime $ GLUE2ComputingShareMaxTotalJobs $
+	GLUE2ComputingShareMaxRunningJobs $ GLUE2ComputingShareMaxWaitingJobs $
+	GLUE2ComputingShareMaxPreLRMSWaitingJobs $
+	GLUE2ComputingShareMaxUserRunningJobs $ 
+	GLUE2ComputingShareMaxSlotsPerJob $ 
+	GLUE2ComputingShareMaxStageInStreams $ 
+	GLUE2ComputingShareMaxStageOutStreams $
+	GLUE2ComputingShareSchedulingPolicy $ GLUE2ComputingShareMaxMainMemory $
+	GLUE2ComputingShareGuaranteedMainMemory $ 
+	GLUE2ComputingShareMaxVirtualMemory $
+	GLUE2ComputingShareGuaranteedVirtualMemory $ 
+	GLUE2ComputingShareMaxDiskSpace $
+	GLUE2ComputingShareDefaultStorageService $ 
+	GLUE2ComputingSharePreemption $ GLUE2ComputingShareTotalJobs $ 
+	GLUE2ComputingShareRunningJobs $ GLUE2ComputingShareLocalRunningJobs $ 
+	GLUE2ComputingShareWaitingJobs $ GLUE2ComputingShareLocalWaitingJobs $ 
+	GLUE2ComputingShareSuspendedJobs $ 
+	GLUE2ComputingShareLocalSuspendedJobs $ GLUE2ComputingShareStagingJobs $
+	GLUE2ComputingShareLocalStagingJobs $ 
+	GLUE2ComputingSharePreLRMSWaitingJobs $
+	GLUE2ComputingShareEstimatedAverageWaitingTime $
+	GLUE2ComputingShareEstimatedWorstWaitingTime $ 
+	GLUE2ComputingShareFreeSlots $
+	GLUE2ComputingShareFreeSlotsWithDuration $ 
+	GLUE2ComputingShareUsedSlots $ GLUE2ComputingShareRequestedSlots $ 
+	GLUE2ComputingShareReservationPolicy $ GLUE2ComputingShareTag $ 
+	GLUE2ComputingShareComputingEndpointForeignKey $
+	GLUE2ComputingShareExecutionEnvironmentForeignKey $ 
+	GLUE2ComputingShareComputingServiceForeignKey )
+ )
+

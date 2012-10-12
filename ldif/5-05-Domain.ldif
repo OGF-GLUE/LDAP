@@ -1,0 +1,55 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 5.5 Domain, 5.5.1 AdminDomain and 5.5.2 UserDomain
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# Domain <<abstract>> inherits from Entity
+
+#########################################################
+# AdminDomain inherits from Domain
+#########################################################
+# Min attributes example
+dn: GLUE2DomainID=testAdminDomainMin,o=glue
+objectClass: GLUE2Domain
+objectClass: GLUE2AdminDomain
+GLUE2DomainID: testAdminDomainMin
+
+# All attributes example
+dn: GLUE2DomainID=testAdminDomain,o=glue
+objectClass: GLUE2Domain
+objectClass: GLUE2AdminDomain
+GLUE2DomainID: testAdminDomain
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2DomainDescription: myDescription
+GLUE2DomainWWW: http://cern.ch
+GLUE2AdminDomainDistributed: TRUE
+GLUE2AdminDomainOwner: David Horat
+
+################################################
+# UserDomain inherits from Domain
+################################################
+# Min attributes example
+dn: GLUE2DomainID=testUserDomainMin,o=glue
+objectClass: GLUE2Domain
+objectClass: GLUE2UserDomain
+GLUE2DomainID: testUserDomainMin
+
+# All attributes example
+dn: GLUE2DomainID=testUserDomain,o=glue
+objectClass: GLUE2Domain
+objectClass: GLUE2UserDomain
+GLUE2DomainID: testUserDomain
+GLUE2EntityName: myName
+GLUE2EntityOtherInfo: Not really
+GLUE2EntityCreationTime: 1970-01-01T00:00:00Z
+GLUE2EntityValidity: 5
+GLUE2DomainDescription: myDescription
+GLUE2DomainWWW: http://cern.ch
+GLUE2UserDomainLevel: 2
+GLUE2UserDomainUserManager: testEndpoint
+GLUE2UserDomainMember: David Horat
+

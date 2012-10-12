@@ -1,0 +1,256 @@
+# URL:     http://forge.gridforum.org/sf/projects/glue-wg
+# Doc:     GLUE Specification 2.0 (March 3, 2009)
+# Section: 6.6 ExecutionEnvironment
+# Authors: Laurence Field (laurence.field@cern.ch), CERN
+#          David Horat (david.horat@cern.ch), CERN
+
+# ExecutionEnvironment inherits from Resource
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.1
+        NAME 'GLUE2ExecutionEnvironmentPlatform'
+        DESC 'The architecture platform of this execution environment'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.2
+        NAME 'GLUE2ExecutionEnvironmentVirtualMachine'
+        DESC 'True if the execution environment is based on a virtual machine
+	(in this case, the values of the other attributes are related to the
+	virtualized environment and not to the hosting environment)'
+        EQUALITY    booleanMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.7
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.3
+        NAME 'GLUE2ExecutionEnvironmentTotalInstances'
+        DESC 'Number of execution environment instances'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.4
+        NAME 'GLUE2ExecutionEnvironmentUsedInstances'
+        DESC 'Number of used execution environment instances; an instance is
+	used when, according to the policies of the  Manager (i.e., LRMS), it 
+	cannot accept new jobs because it already runs the maximum number of 
+	allowed jobs'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.5
+        NAME 'GLUE2ExecutionEnvironmentUnavailableInstances'
+        DESC 'Number of unavailable execution environment instances because of
+	failures or maintenance'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.6
+        NAME 'GLUE2ExecutionEnvironmentPhysicalCPUs'
+        DESC 'Number of physical CPUs in an execution environment instance'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.7
+        NAME 'GLUE2ExecutionEnvironmentLogicalCPUs'
+        DESC 'Number of logical CPUs in an execution environment instance'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.8
+        NAME 'GLUE2ExecutionEnvironmentCPUMultiplicity'
+        DESC 'Information about the multiplicity of both physical CPUs and
+	cores available in an execution environment instance'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.9
+        NAME 'GLUE2ExecutionEnvironmentCPUVendor'
+        DESC 'Name of the physical CPU vendor'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.10
+        NAME 'GLUE2ExecutionEnvironmentCPUModel'
+        DESC 'Physical CPU model as defined by the vendor'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.11
+        NAME 'GLUE2ExecutionEnvironmentCPUVersion'
+        DESC 'Physical CPU version as defined by the vendor'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.12
+        NAME 'GLUE2ExecutionEnvironmentCPUClockSpeed'
+        DESC 'Nominal clock speed of the physical CPU'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.13
+        NAME 'GLUE2ExecutionEnvironmentCPUTimeScalingFactor'
+        DESC 'Factor used by the  Manager (i.e., LRMS) to scale the CPU time
+	(CPU Time divided by CPUTimeScalingFactor); for the reference execution
+	environment, this attribute is equal to 1'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.14
+        NAME 'GLUE2ExecutionEnvironmentWallTimeScalingFactor'
+        DESC 'Factor used by the  Manager (i.e., LRMS) to scale the Wall time
+	(Wall Time divided by WallTimeScalingFactor)'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.15
+        NAME 'GLUE2ExecutionEnvironmentMainMemorySize'
+        DESC 'Amount of RAM (if many jobs run in the same execution
+ 	environment, they compete for the total RAM)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.16
+        NAME 'GLUE2ExecutionEnvironmentVirtualMemorySize'
+        DESC 'The amount of Virtual Memory (RAM+Swap)'
+        EQUALITY    integerMatch
+        ORDERING    integerOrderingMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.27
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.17
+        NAME 'GLUE2ExecutionEnvironmentOSFamily'
+        DESC 'Family of the operating system'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26        
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.18
+        NAME 'GLUE2ExecutionEnvironmentOSName'
+        DESC 'Name of the operating system'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.19
+        NAME 'GLUE2ExecutionEnvironmentOSVersion'
+        DESC 'Version of the operating system'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.20
+        NAME 'GLUE2ExecutionEnvironmentConnectivityIn'
+        DESC 'Permission for direct inbound connectivity, even if limited'
+        EQUALITY    booleanMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.7
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.21
+        NAME 'GLUE2ExecutionEnvironmentConnectivityOut'
+        DESC 'Permission for direct outbound connectivity, even if limited'
+        EQUALITY    booleanMatch
+        SYNTAX      1.3.6.1.4.1.1466.115.121.1.7
+        SINGLE-VALUE
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.22
+        NAME 'GLUE2ExecutionEnvironmentNetworkInfo'
+        DESC 'Type of internal network available among the execution
+	environment instances'
+        EQUALITY caseExactIA5Match
+        SUBSTR caseExactIA5SubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+ )
+
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.6.23
+        NAME 'GLUE2ExecutionEnvironmentComputingManagerForeignKey'
+        DESC 'ForeignKey' 
+        EQUALITY caseExactIA5Match 
+        SUBSTR caseExactIA5SubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        SINGLE-VALUE
+ )
+
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.6.6
+        NAME 'GLUE2ExecutionEnvironment'
+        DESC 'A description of hardware, operating system and network
+	characteristics that defines the environment available to and 
+	requestable by a Grid job when submitted to a  Service via a Endpoint; 
+	the description also includes information about the 
+	total/available/used instances of the execution environment'
+        AUXILIARY
+        MUST ( GLUE2ExecutionEnvironmentPlatform $
+	GLUE2ExecutionEnvironmentMainMemorySize $ 
+	GLUE2ExecutionEnvironmentOSFamily $
+	GLUE2ExecutionEnvironmentConnectivityIn $
+	GLUE2ExecutionEnvironmentConnectivityOut )
+        MAY ( GLUE2ExecutionEnvironmentVirtualMachine $
+	GLUE2ExecutionEnvironmentTotalInstances $
+	GLUE2ExecutionEnvironmentUsedInstances $
+	GLUE2ExecutionEnvironmentUnavailableInstances $
+	GLUE2ExecutionEnvironmentPhysicalCPUs $ 
+	GLUE2ExecutionEnvironmentLogicalCPUs $
+	GLUE2ExecutionEnvironmentCPUMultiplicity $ 
+	GLUE2ExecutionEnvironmentCPUVendor $
+	GLUE2ExecutionEnvironmentCPUModel $ 
+	GLUE2ExecutionEnvironmentCPUVersion $
+	GLUE2ExecutionEnvironmentCPUClockSpeed $
+	GLUE2ExecutionEnvironmentCPUTimeScalingFactor $
+	GLUE2ExecutionEnvironmentWallTimeScalingFactor $
+	GLUE2ExecutionEnvironmentVirtualMemorySize $ 
+	GLUE2ExecutionEnvironmentOSName $
+	GLUE2ExecutionEnvironmentOSVersion $ 
+	GLUE2ExecutionEnvironmentNetworkInfo $
+	GLUE2ExecutionEnvironmentComputingManagerForeignKey )
+ )
+
