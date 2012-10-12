@@ -3,6 +3,7 @@
 # Section: 6.7 ApplicationEnvironment
 # Authors: Laurence Field (laurence.field@cern.ch), CERN
 #          David Horat (david.horat@cern.ch), CERN
+#          Florido Paganelli (florido.paganelli@hep.lu.se), Lund University
 
 # ApplicationEnvironment inherits from Entity
 

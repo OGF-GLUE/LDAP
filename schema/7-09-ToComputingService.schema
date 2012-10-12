@@ -3,10 +3,11 @@
 # Section: 7.9 ToComputingService
 # Authors: Laurence Field (laurence.field@cern.ch), CERN
 #          David Horat (david.horat@cern.ch), CERN
+#          Florido Paganelli (florido.paganelli@hep.lu.se), Lund University
 
 # ToComputingService inherits from Entity
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.9.1
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.35.1
         NAME 'GLUE2ToComputingServiceID'
         DESC 'Globally unique ID'
 	EQUALITY caseExactIA5Match
@@ -15,7 +16,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.9.1
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.9.2
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.35.2
         NAME 'GLUE2ToComputingServiceNetworkInfo'
         DESC 'Type of network available among the storage service and computing
 	service'
@@ -25,7 +26,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.9.2
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.9.3
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.35.3
         NAME 'GLUE2ToComputingServiceBandwidth'
         DESC 'The nominal bandwidth available between the storage service and
 	computing service'
@@ -35,7 +36,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.9.3
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.9.4
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.35.4
         NAME 'GLUE2ToComputingServiceStorageAccessProtocolForeignKey' 
         DESC 'ForeignKey' 
         EQUALITY caseExactIA5Match 
@@ -43,7 +44,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.9.4
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.9.5
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.35.5
         NAME 'GLUE2ToComputingServiceComputingServiceForeignKey' 
         DESC 'ForeignKey' 
         EQUALITY caseExactIA5Match 
@@ -52,7 +53,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.9.5
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.9.6
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.35.6
         NAME 'GLUE2ToComputingServiceStorageServiceForeignKey' 
         DESC 'ForeignKey' 
         EQUALITY caseExactIA5Match 
@@ -61,7 +62,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.9.6
         SINGLE-VALUE
  )
 
-objectclass ( 1.3.6.1.4.1.6757.100.1.1.7.9
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.35
         NAME 'GLUE2ToComputingService'
         SUP GLUE2Entity
         DESC 'Description of the network link quality of a storage service to a

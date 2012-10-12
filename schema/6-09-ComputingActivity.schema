@@ -3,6 +3,7 @@
 # Section: 6.9 ComputingActivity
 # Authors: Laurence Field (laurence.field@cern.ch), CERN
 #          David Horat (david.horat@cern.ch), CERN
+#          Florido Paganelli (florido.paganelli@hep.lu.se), Lund University
 
 # ComputingActivity inherits from Activity
 

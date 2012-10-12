@@ -7,7 +7,7 @@
 
 # StorageShare inherits from Share
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.1
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.1
         NAME 'GLUE2StorageShareServingState'
         DESC 'A state specifying if the share is open to place new requests and
 	if it is open to offer the already present requests for
@@ -18,7 +18,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.1
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.2
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.2
         NAME 'GLUE2StorageSharePath'
         DESC 'A namespace where files are logically assigned to when they are
 	stored into this
@@ -29,7 +29,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.2
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.3
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.3
         NAME 'GLUE2StorageShareAccessMode'
         DESC 'An identifier for the type of access and usage allowed for this
 	share'
@@ -38,7 +38,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.3
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.4
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.4
         NAME 'GLUE2StorageShareSharingID'
         DESC 'Local ID common to the storage shares which use the same storage
 	share capacities (dedicated is a reserved term and means that the 
@@ -50,7 +50,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.4
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.5
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.5
         NAME 'GLUE2StorageShareAccessLatency'
         DESC 'The maximum latency category for a file stored in this share to
 	be made available for reading'
@@ -60,7 +60,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.5
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.6
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.6
         NAME 'GLUE2StorageShareRetentionPolicy'
         DESC 'The quality of retention, which indicates the probability of the
 	storage system losing a file'
@@ -69,7 +69,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.6
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.7
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.7
         NAME 'GLUE2StorageShareExpirationMode'
         DESC 'Support for files with infinite and/or finite lifetimes, and what
 	actions the storage service may take upon the expiration of a file'
@@ -79,7 +79,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.7
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.8
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.8
         NAME 'GLUE2StorageShareDefaultLifeTime'
         DESC 'The default lifetime assigned to the file if no explicit lifetime
 	is specified'
@@ -89,7 +89,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.8
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.9
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.9
         NAME 'GLUE2StorageShareMaximumLifeTime'
         DESC 'The maximum lifetime that can be requested for a file'
         EQUALITY    integerMatch
@@ -98,7 +98,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.9
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.10
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.10
         NAME 'GLUE2StorageShareTag'
         DESC 'A user defined tag for additional information'
 	EQUALITY caseExactIA5Match
@@ -107,7 +107,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.10
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.11
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.11
         NAME 'GLUE2StorageShareStorageEndpointForeignKey'
         DESC 'ForeignKey' 
         EQUALITY caseExactIA5Match 
@@ -115,7 +115,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.11
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.12
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.12
         NAME 'GLUE2StorageShareDataStoreForeignKey'
         DESC 'ForeignKey' 
         EQUALITY caseExactIA5Match 
@@ -123,7 +123,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.12
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.13
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.13
         NAME 'GLUE2StorageShareStorageServiceForeignKey'
         DESC 'ForeignKey' 
         EQUALITY caseExactIA5Match 
@@ -132,7 +132,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.5.13
         SINGLE-VALUE
  )
 
-objectclass ( 1.3.6.1.4.1.6757.100.1.1.7.5
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.31
         NAME 'GLUE2StorageShare'
         DESC 'A utilization target for a set of storage resources defined by a
 	set of configuration parameters and characterized by status 
