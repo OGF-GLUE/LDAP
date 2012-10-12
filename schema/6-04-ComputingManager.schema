@@ -3,6 +3,7 @@
 # Section: 6.4 ComputingManager
 # Authors: Laurence Field (laurence.field@cern.ch), CERN
 #          David Horat (david.horat@cern.ch), CERN
+#          Florido Paganelli (florido.paganelli@hep.lu.se), Lund University
 
 # ComputingManager inherits from Manager
 
@@ -264,7 +265,8 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.6.4
 	environments. It can describe also aggregated information about the 
 	managed resources. The computing manager is also known as Local 
 	Resource Management System (LRMS).'
-        AUXILIARY
+        SUP GLUE2Manager
+        STRUCTURAL
         MAY ( GLUE2ComputingManagerReservation $
 	GLUE2ComputingManagerBulkSubmission $ 
 	GLUE2ComputingManagerTotalPhysicalCPUs $

@@ -3,6 +3,7 @@
 # Section: 5.5 Domain, 5.5.1 AdminDomain and 5.5.2 UserDomain
 # Authors: Laurence Field (laurence.field@cern.ch), CERN
 #          David Horat (david.horat@cern.ch), CERN
+#          Florido Paganelli (florido.paganelli@hep.lu.se), Lund University
 
 # Domain <<abstract>> inherits from Entity
 
@@ -76,7 +77,8 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.5.7
 	roles and privileges to services via policies. An AdminDomain manages 
 	services that can be geographically distributed, nevertheless a primary
 	location should be identified.'
-        AUXILIARY 
+        SUP GLUE2Domain
+        STRUCTURAL 
         MAY ( GLUE2AdminDomainDistributed $ GLUE2AdminDomainOwner $
 	GLUE2AdminDomainAdminDomainForeignKey )
  )
@@ -121,7 +123,8 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.5.8
         NAME 'GLUE2UserDomain' 
         DESC 'A collection of actors that can be assigned with user roles and
 	privileges to services or shares via policies'
-        AUXILIARY 
+        SUP GLUE2Domain
+        STRUCTURAL 
         MAY ( GLUE2UserDomainLevel $ GLUE2UserDomainUserManager $
 	GLUE2UserDomainMember $ GLUE2UserDomainUserDomainForeignKey )
  )
