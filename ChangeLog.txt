@@ -1,0 +1,30 @@
+########################################################################
+#
+# Changelog for LDAP GLUE2 Schema
+#
+########################################################################
+
+v2.0rc1 Florido Paganelli 2012-10-10
+
+  * Added Version file
+  * changed all relevant entities from AUXILIARY to STRUCTURAL:
+    
+    Changed AUXILIARY to
+    
+    SUP GLUE2<Superclass>
+    STRUCTURAL
+    
+    in AdminDomain,UserDomain,
+    ComputingService, ComputingEndpoint, ComputingShare, ComputingManager,
+    ExecutionEnvironment, StorageService,
+    StorageEndpoint, StorageShare
+    
+
+v2.0rc2 Florido Paganelli 2012-10-12
+  
+   * Changed OIDs on all objects.
+     A summary of the new OIDs numbering can be found at
+       https://twiki.cern.ch/twiki/pub/EMI/Glue2LdapStructure/ReassigningGLUE2OIDs.pdf
+
+
+  
