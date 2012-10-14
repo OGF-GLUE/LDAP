@@ -13,7 +13,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.1
 	if it is open to offer the already present requests for
 	execution'
 	EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
@@ -24,7 +24,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.2
 	stored into this
 	share'
 	EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
@@ -34,7 +34,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.3
         DESC 'An identifier for the type of access and usage allowed for this
 	share'
 	EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
@@ -45,7 +45,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.4
 	storage share capacities are not shared with other storage share 
 	capacities part of different storage shares)'
 	EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
@@ -55,7 +55,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.5
         DESC 'The maximum latency category for a file stored in this share to
 	be made available for reading'
 	EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
@@ -65,7 +65,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.6
         DESC 'The quality of retention, which indicates the probability of the
 	storage system losing a file'
 	EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
@@ -74,7 +74,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.7
         DESC 'Support for files with infinite and/or finite lifetimes, and what
 	actions the storage service may take upon the expiration of a file'
 	EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
@@ -102,7 +102,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.10
         NAME 'GLUE2StorageShareTag'
         DESC 'A user defined tag for additional information'
 	EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
@@ -111,7 +111,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.11
         NAME 'GLUE2StorageShareStorageEndpointForeignKey'
         DESC 'ForeignKey' 
         EQUALITY caseExactMatch 
-        EQUALITY caseExactSubstringsMatch 
+        SUBSTR caseExactSubstringsMatch 
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
@@ -119,7 +119,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.12
         NAME 'GLUE2StorageShareDataStoreForeignKey'
         DESC 'ForeignKey' 
         EQUALITY caseExactMatch 
-        EQUALITY caseExactSubstringsMatch 
+        SUBSTR caseExactSubstringsMatch 
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
@@ -127,7 +127,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.13
         NAME 'GLUE2StorageShareStorageServiceForeignKey'
         DESC 'ForeignKey' 
         EQUALITY caseExactMatch 
-        EQUALITY caseExactSubstringsMatch 
+        SUBSTR caseExactSubstringsMatch 
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )

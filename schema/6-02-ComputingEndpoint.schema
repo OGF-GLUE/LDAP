@@ -11,7 +11,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.18.1
         NAME 'GLUE2ComputingEndpointStaging'
         DESC 'Supported staging functionalities'
         EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
@@ -20,7 +20,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.18.2
         NAME 'GLUE2ComputingEndpointJobDescription'
         DESC 'Supported type of job description language'
         EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
@@ -85,7 +85,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.18.9
         NAME 'GLUE2ComputingEndpointComputingServiceForeignKey'
         DESC 'ForeignKey'
         EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )

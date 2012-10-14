@@ -11,7 +11,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.34.1
         NAME 'GLUE2DataStoreType'
         DESC 'Type of storage resource'
 	EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
@@ -21,7 +21,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.34.2
         DESC 'The maximum latency category for a file stored in this resource
 	to be made available for reading'
 	EQUALITY caseExactMatch
-        EQUALITY caseExactSubstringsMatch
+        SUBSTR caseExactSubstringsMatch
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
@@ -57,7 +57,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.34.6
         NAME 'GLUE2DataStoreStorageManagerForeignKey'
         DESC 'ForeignKey' 
         EQUALITY caseExactMatch 
-        EQUALITY caseExactSubstringsMatch 
+        SUBSTR caseExactSubstringsMatch 
         SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
