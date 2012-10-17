@@ -10,7 +10,7 @@ Version history
 v0.1 - Initial release. 25/03/2009
 v0.2 - OID and description corrections. Relationship implementation. 30/03/2009
 v0.3 - New version with changes agreed by the comunity. 25/05/2009
-v2.0rcX - experimental revision carried on by EMI
+v2.0rcX - experimental revision carried on by EMI. 10/2012
 
 +++++++++++++++++++++++++++
   Synopsis
@@ -29,9 +29,10 @@ ldif/			Directory where all LDIF files for testing are stored
   *.ldif		LDIF files for each object in the specification
   99-TearDown.td	DN of all objects created in the tests
 schema/			Directory containing all the LDAP schemas and a version file.
-  00-Version.schema     Dummy schema file containing only comments and a version number.
-                The version number should always be in sync with the major version
-                number in this document.
+  00-Version.schema     Dummy schema file containing only comments and a
+                        version number.
+                        The version number should always be in sync with
+                        the major version number in this document.
   *.schema		LDAP schemas for development purposes
 compile-schema.sh	Script to compile all schemas into a single file
 README			This file
