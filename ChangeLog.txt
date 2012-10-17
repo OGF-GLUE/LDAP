@@ -34,3 +34,10 @@ v2.0rc3 Florido Paganelli 2012-10-14
      Changed EQUALITY and SUBSTR to be compatible with DirectoryString.
    !!ATTENTION!!: there are issues with DirectoryString. A DirectoryString
                 attribute cannot be empty. Maybe this rc3 must be discarded.
+                
+
+v2.0rc4 Florido Paganelli 2012-10-15
+  
+   * Changed GLUE2GroupID attribute to GLUE2GroupName, added attribute aliases
+   * Changed MUST to GLUE2GroupName
+   * The two solutions above preserve full compatibility.
