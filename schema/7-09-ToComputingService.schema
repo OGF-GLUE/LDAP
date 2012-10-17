@@ -10,9 +10,9 @@
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.35.1
         NAME 'GLUE2ToComputingServiceID'
         DESC 'Globally unique ID'
-	EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
@@ -20,9 +20,9 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.35.2
         NAME 'GLUE2ToComputingServiceNetworkInfo'
         DESC 'Type of network available among the storage service and computing
 	service'
-	EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
@@ -39,26 +39,26 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.35.3
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.35.4
         NAME 'GLUE2ToComputingServiceStorageAccessProtocolForeignKey' 
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.35.5
         NAME 'GLUE2ToComputingServiceComputingServiceForeignKey' 
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.35.6
         NAME 'GLUE2ToComputingServiceStorageServiceForeignKey' 
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 

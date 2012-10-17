@@ -27,4 +27,10 @@ v2.0rc2 Florido Paganelli 2012-10-12
        https://twiki.cern.ch/twiki/pub/EMI/Glue2LdapStructure/ReassigningGLUE2OIDs.pdf
 
 
+v2.0rc3 Florido Paganelli 2012-10-14
   
+   * Changed Type to DirectoryString (SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+     on all String attributetypes to align with LDAP Rendering DRAFT.
+     Changed EQUALITY and SUBSTR to be compatible with DirectoryString.
+   !!ATTENTION!!: there are issues with DirectoryString. A DirectoryString
+                attribute cannot be empty. Maybe this rc3 must be discarded.

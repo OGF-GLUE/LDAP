@@ -12,9 +12,9 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.1
         DESC 'A state specifying if the share is open to place new requests and
 	if it is open to offer the already present requests for
 	execution'
-	EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
@@ -23,9 +23,9 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.2
         DESC 'A namespace where files are logically assigned to when they are
 	stored into this
 	share'
-	EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
@@ -33,9 +33,9 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.3
         NAME 'GLUE2StorageShareAccessMode'
         DESC 'An identifier for the type of access and usage allowed for this
 	share'
-	EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.4
@@ -44,9 +44,9 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.4
 	share capacities (dedicated is a reserved term and means that the 
 	storage share capacities are not shared with other storage share 
 	capacities part of different storage shares)'
-	EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
@@ -54,9 +54,9 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.5
         NAME 'GLUE2StorageShareAccessLatency'
         DESC 'The maximum latency category for a file stored in this share to
 	be made available for reading'
-	EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
@@ -64,18 +64,18 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.6
         NAME 'GLUE2StorageShareRetentionPolicy'
         DESC 'The quality of retention, which indicates the probability of the
 	storage system losing a file'
-	EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.7
         NAME 'GLUE2StorageShareExpirationMode'
         DESC 'Support for files with infinite and/or finite lifetimes, and what
 	actions the storage service may take upon the expiration of a file'
-	EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
@@ -101,34 +101,34 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.9
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.10
         NAME 'GLUE2StorageShareTag'
         DESC 'A user defined tag for additional information'
-	EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.11
         NAME 'GLUE2StorageShareStorageEndpointForeignKey'
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.12
         NAME 'GLUE2StorageShareDataStoreForeignKey'
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.31.13
         NAME 'GLUE2StorageShareStorageServiceForeignKey'
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 

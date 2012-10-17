@@ -10,9 +10,9 @@
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.4.1
         NAME 'GLUE2ContactID' 
         DESC 'Globally unique ID' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
@@ -20,35 +20,35 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.4.2
         NAME 'GLUE2ContactDetail' 
         DESC 'URL embedding the contact information. The syntax of URI depends
 	on the communication channel'
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.4.3
         NAME 'GLUE2ContactType' 
         DESC 'Type of contact' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.4.4
         NAME 'GLUE2ContactServiceForeignKey' 
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
 attributetype ( 1.3.6.1.4.1.6757.100.1.1.4.5
         NAME 'GLUE2ContactDomainForeignKey' 
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
 objectclass ( 1.3.6.1.4.1.6757.100.1.1.4 
