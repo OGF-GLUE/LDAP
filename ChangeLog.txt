@@ -36,7 +36,7 @@ v2.0rc3 Florido Paganelli 2012-10-14
                 attribute cannot be empty. Maybe this rc3 must be discarded.
                 
 
-v2.0rc4 Florido Paganelli 2012-10-15
+v2.0rc4 Florido Paganelli 2012-11-01
   
    * Changed GLUE2GroupID attribute to GLUE2GroupName, added attribute aliases
    * Changed MUST to GLUE2GroupName
