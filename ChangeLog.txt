@@ -41,3 +41,9 @@ v2.0rc4 Florido Paganelli 2012-11-01
    * Changed GLUE2GroupID attribute to GLUE2GroupName, added attribute aliases
    * Changed MUST to GLUE2GroupName
    * The two solutions above preserve full compatibility.
+
+v2.0rc5 Florido Paganelli 2013-01-11
+  
+   * Changed GLUE2GroupName attribute NAME back to GLUE2GroupID, added GLUE2GroupName attribute as an alias
+   * Changed GLUE2Group object MUST back to GLUE2GroupID
+   * This solution preserves backward compatibility between EMI3 and EMI2 BDII products, that was broken with 2.0rc4.
