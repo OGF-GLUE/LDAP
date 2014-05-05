@@ -45,7 +45,7 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.14
         NAME 'GLUE2Policy'
         SUP GLUE2Entity
         DESC 'A policy'
-        STRUCTURAL
+        ABSTRACT
         MUST ( GLUE2PolicyID $ GLUE2PolicyScheme $ GLUE2PolicyRule )
         MAY ( GLUE2PolicyUserDomainForeignKey )
  )
@@ -66,7 +66,7 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.15
         DESC 'Statements, rules or assertions that provide coarse-granularity
 	information about the authorization of access by groups of actors to an
 	Endpoint'
-        AUXILIARY 
+        STRUCTURAL 
         MUST GLUE2AccessPolicyEndpointForeignKey
  )
 
@@ -85,6 +85,6 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.16
         NAME 'GLUE2MappingPolicy' 
         DESC 'Statements, rules or assertions that provide coarse-granularity
 	information about the mapping or UserDomain requests to a Share'
-        AUXILIARY 
+        STRUCTURAL 
         MUST GLUE2MappingPolicyShareForeignKey
  )
