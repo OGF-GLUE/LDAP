@@ -54,7 +54,7 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.10
         NAME 'GLUE2Share'
         SUP GLUE2Entity
         DESC 'A share' 
-        STRUCTURAL 
+        ABSTRACT 
         MUST ( GLUE2ShareID $ GLUE2ShareServiceForeignKey )
         MAY ( GLUE2ShareDescription $ GLUE2ShareEndpointForeignKey $
 	GLUE2ShareResourceForeignKey )
