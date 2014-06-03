@@ -4,6 +4,11 @@
 #
 ########################################################################
     
+v2.0rc7 Florido Paganelli 2014-05-05
+
+   * Changed Domain, Resource, Share, Policy to STRUCTURAL to be 
+     consistent with realisation document.   
+
 v2.0rc6 Florido Paganelli 2014-05-05
 
    * Changed Domain, Resource, Share, Policy to ABSTRACT to be 

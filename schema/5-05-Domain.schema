@@ -38,7 +38,7 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.5
         NAME 'GLUE2Domain' 
         SUP GLUE2Entity
         DESC 'A Domain' 
-        ABSTRACT 
+        STRUCTURAL 
         MUST GLUE2DomainID 
         MAY ( GLUE2DomainDescription $ GLUE2DomainWWW )
  )
