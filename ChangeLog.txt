@@ -3,6 +3,10 @@
 # Changelog for LDAP GLUE2 Schema
 #
 ########################################################################
+
+v2.0 Florido Paganelli 2014-07-02
+
+    * Changed release to 2.0
     
 v2.0rc7 Florido Paganelli 2014-05-05
 
