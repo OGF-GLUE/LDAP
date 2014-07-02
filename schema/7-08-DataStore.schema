@@ -69,7 +69,8 @@ objectclass ( 1.3.6.1.4.1.6757.100.1.1.34
 	(storage manager), part of a storage service, reachable via one or 
 	more endpoints and having one or more shares defined on it. A storage 
 	resource refers to a category with summary information on the capacity'
-        AUXILIARY
+        SUP 'GLUE2Resource'
+        STRUCTURAL
         MUST ( GLUE2DataStoreType $ 
 	GLUE2DataStoreLatency )
         MAY ( GLUE2DataStoreTotalSize $ 

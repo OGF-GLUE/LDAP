@@ -11,6 +11,7 @@ v0.1 - Initial release. 25/03/2009
 v0.2 - OID and description corrections. Relationship implementation. 30/03/2009
 v0.3 - New version with changes agreed by the comunity. 25/05/2009
 v2.0rcX - experimental revision carried on by EMI. 10/2012
+V2.0 - final version in sync with LDAP realisation document
 
 +++++++++++++++++++++++++++
   Synopsis
