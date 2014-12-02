@@ -3,28 +3,31 @@
 # Section: 6.4 ComputingManager
 # Authors: Laurence Field (laurence.field@cern.ch), CERN
 #          David Horat (david.horat@cern.ch), CERN
+#          Florido Paganelli (florido.paganelli@hep.lu.se), Lund University
 
 # ComputingManager inherits from Manager
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.1
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.1
         NAME 'GLUE2ComputingManagerReservation'
         DESC 'True if the computing manager (i.e, LRMS) supports advance
 	reservation'
-        EQUALITY    booleanMatch
-        SYNTAX      1.3.6.1.4.1.1466.115.121.1.7
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.2
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.2
         NAME 'GLUE2ComputingManagerBulkSubmission'
         DESC 'True if the computing manager (i.e, LRMS) supports the bulk
 	submission'
-        EQUALITY    booleanMatch
-        SYNTAX      1.3.6.1.4.1.1466.115.121.1.7
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.3
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.3
         NAME 'GLUE2ComputingManagerTotalPhysicalCPUs'
         DESC 'Number of managed physical CPUs accessible via any of the
 	available endpoints (there is one physical CPU per socket)'
@@ -34,7 +37,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.3
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.4
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.4
         NAME 'GLUE2ComputingManagerTotalLogicalCPUs'
         DESC 'Number of managed logical CPUs accessible via any of the
 	available endpoints (a logical CPU corresponds to a CPU visible to the
@@ -45,7 +48,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.4
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.5
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.5
         NAME 'GLUE2ComputingManagerTotalSlots'
         DESC 'Number of managed slots'
         EQUALITY    integerMatch
@@ -54,7 +57,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.5
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.6
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.6
         NAME 'GLUE2ComputingManagerSlotsUsedByLocalJobs'
         DESC 'Number of slots used by jobs submitted via local interface'
         EQUALITY    integerMatch
@@ -63,7 +66,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.6
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.7
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.7
         NAME 'GLUE2ComputingManagerSlotsUsedByGridJobs'
         DESC 'Number of slots used by jobs submitted via a Grid interface'
         EQUALITY    integerMatch
@@ -72,55 +75,58 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.7
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.8
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.8
         NAME 'GLUE2ComputingManagerHomogeneous'
         DESC 'True if the computing manager has only one type of execution
 	environment'
-        EQUALITY    booleanMatch
-        SYNTAX      1.3.6.1.4.1.1466.115.121.1.7
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.9
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.9
         NAME 'GLUE2ComputingManagerNetworkInfo'
         DESC 'Type of internal network available among all the managed
 	execution environment instances'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.10
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.10
         NAME 'GLUE2ComputingManagerLogicalCPUDistribution'
         DESC 'Syntax: X1:Y1, …, Xn:Yn where Xi is the number of logical CPUs
 	and Yi is the number of boxes for the execution environment i'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.11
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.11
         NAME 'GLUE2ComputingManagerWorkingAreaShared'
         DESC 'A working area is an allocated storage extent that holds the home
 	directories of the Grid jobs; this property is true if the working area 
 	is shared across different execution environment instances (i.e., 
 	cluster nodes)'
-        EQUALITY    booleanMatch
-        SYNTAX      1.3.6.1.4.1.1466.115.121.1.7
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.12
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.12
         NAME 'GLUE2ComputingManagerWorkingAreaGuaranteed'
         DESC 'True if the job is guaranteed the full extent of the
 	WorkingAreaTotal attribute'
-        EQUALITY    booleanMatch
-        SYNTAX      1.3.6.1.4.1.1466.115.121.1.7
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.13
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.13
         NAME 'GLUE2ComputingManagerWorkingAreaTotal'
         DESC 'Total size of working area available to all the Grid jobs either
 	as a shared area across all the execution environments 
@@ -132,7 +138,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.13
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.14
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.14
         NAME 'GLUE2ComputingManagerWorkingAreaFree'
         DESC 'Free size of working area available to all the Grid jobs either
 	as a shared area across all the execution environments 
@@ -144,7 +150,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.14
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.15
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.15
         NAME 'GLUE2ComputingManagerWorkingAreaLifeTime'
         DESC 'Lifetime of the Grid job files present in the working area; the
 	lifetime is related to the end time of thejob'
@@ -154,7 +160,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.16
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.16
         NAME 'GLUE2ComputingManagerWorkingAreaMultiSlotTotal'
         DESC 'Total size of working area available to all the multi-slot Grid
 	jobs either as a shared area across all the execution environments
@@ -167,7 +173,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.16
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.17
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.17
         NAME 'GLUE2ComputingManagerWorkingAreaMultiSlotFree'
         DESC 'Free size of working area available to all the multi-slot Grid
 	jobs either as a shared area across all the execution environments 
@@ -180,7 +186,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.17
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.18
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.18
         NAME 'GLUE2ComputingManagerWorkingAreaMultiSlotLifeTime'
         DESC 'Lifetime of the multi-slot Grid job files present in the working
 	area; the lifetime is related to the end time of the job'
@@ -190,7 +196,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.18
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.19
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.19
         NAME 'GLUE2ComputingManagerCacheTotal'
         DESC 'Total size of a temporary storage area where frequently accessed
 	data can be stored for rapid access by consequent Grid jobs'
@@ -200,7 +206,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.19
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.20
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.20
         NAME 'GLUE2ComputingManagerCacheFree'
         DESC 'Free size of a temporary storage area where frequently accessed
 	data can be stored for rapid access by consequent Grid jobs; in the 
@@ -212,19 +218,19 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.20
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.21
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.21
         NAME 'GLUE2ComputingManagerTmpDir'
         DESC 'The absolute path of a temporary directory local to an execution
 	environment instance (i.e., worker node). This directory must be 
 	available to programs using the normal file access primitives 
 	(open/read/write/close)'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.22
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.22
         NAME 'GLUE2ComputingManagerScratchDir'
         DESC 'The absolute path for a shared directory available for
 	application data. Typically a POSIX accessible transient disk space 
@@ -232,39 +238,40 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.22
 	MPI applications or to store intermediate files that need further 
 	processing by local jobs or as staging area, specially if the execution 
 	environment instances have no Internet connectivity'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.23
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.23
         NAME 'GLUE2ComputingManagerApplicationDir'
         DESC 'The path of the directory available for application installation.
 	 Typically a PO-SIX accessible disk space with transient to permanent
 	 allocation to the users'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.4.24
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.20.24
         NAME 'GLUE2ComputingManagerComputingServiceForeignKey'
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-objectclass ( 1.3.6.1.4.1.6757.100.1.1.6.4
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.20
         NAME 'GLUE2ComputingManager'
         DESC 'A software component locally managing one or more execution
 	environments. It can describe also aggregated information about the 
 	managed resources. The computing manager is also known as Local 
 	Resource Management System (LRMS).'
-        AUXILIARY
+        SUP GLUE2Manager
+        STRUCTURAL
         MAY ( GLUE2ComputingManagerReservation $
 	GLUE2ComputingManagerBulkSubmission $ 
 	GLUE2ComputingManagerTotalPhysicalCPUs $
