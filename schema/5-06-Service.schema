@@ -3,83 +3,84 @@
 # Section: 5.6 Service
 # Authors: Laurence Field (laurence.field@cern.ch), CERN
 #          David Horat (david.horat@cern.ch), CERN
+#          Florido Paganelli (florido.paganelli@hep.lu.se), Lund University
 
 # Service inherits from Entity
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.1
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.8.1
         NAME 'GLUE2ServiceID'
         DESC 'Globally unique ID'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.2
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.8.2
         NAME 'GLUE2ServiceCapability'
         DESC 'The provided capability according to the OGSA architecture (it is
 	given by the sum of all the capabilities provided by the related
 	endpoints)'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.3
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.8.3
         NAME 'GLUE2ServiceType'
         DESC 'The type of service according to a middleware classification'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.4
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.8.4
         NAME 'GLUE2ServiceQualityLevel'
         DESC 'Maturity of the service in terms of quality of the software
 	components'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.5
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.8.5
         NAME 'GLUE2ServiceStatusInfo'
         DESC 'A URL providing additional information like monitoring aspects' 
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.6
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.8.6
         NAME 'GLUE2ServiceComplexity'
         DESC 'Human-readable summary description of the complexity in terms of
 	the number of endpoint types, shares and resources. The syntax should 
 	be: EndpointType=X, Share=Y, Resource=Z.'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.11
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.8.7
         NAME 'GLUE2ServiceAdminDomainForeignKey'
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.6.12
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.8.8
         NAME 'GLUE2ServiceServiceForeignKey' 
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
-objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.6
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.8
         NAME 'GLUE2Service'
         SUP GLUE2Entity
         DESC 'An abstracted, logical view of actual software components that

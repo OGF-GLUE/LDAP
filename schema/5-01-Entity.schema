@@ -3,47 +3,48 @@
 # Section: 5.1 Entity
 # Authors: Laurence Field (laurence.field@cern.ch), CERN
 #          David Horat (david.horat@cern.ch), CERN
+#          Florido Paganelli (florido.paganelli@hep.lu.se), Lund University
 
 # Entity <<abstract>>
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.1.2 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.1.2 
         NAME 'GLUE2EntityName' 
         DESC 'Human-readable name' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.1.3 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.1.3 
         NAME 'GLUE2EntityOtherInfo' 
         DESC 'Placeholder to publish info that does not fit in any other
 	attribute'
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.1.4 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.1.4 
         NAME 'GLUE2EntityCreationTime' 
         DESC 'Timestamp describing when the entity instance was generated' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.1.5 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.1.5 
         NAME 'GLUE2EntityValidity' 
         DESC 'The duration of the information presented in this object after
 	its creation time'
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
-objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.1
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.1
         NAME 'GLUE2Entity' 
         DESC 'Base class' 
         ABSTRACT 

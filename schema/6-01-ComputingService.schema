@@ -3,10 +3,11 @@
 # Section: 6.1 ComputingService
 # Authors: Laurence Field (laurence.field@cern.ch), CERN
 #          David Horat (david.horat@cern.ch), CERN
+#          Florido Paganelli (florido.paganelli@hep.lu.se), Lund University
 
 # ComputingService inherits from Service
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1.1
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.17.1
         NAME 'GLUE2ComputingServiceTotalJobs'
         DESC 'Number of total jobs'
     	EQUALITY    integerMatch
@@ -15,7 +16,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1.1
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1.2
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.17.2
         NAME 'GLUE2ComputingServiceRunningJobs'
         DESC 'Number of running jobs'
         EQUALITY    integerMatch
@@ -24,7 +25,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1.2
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1.3
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.17.3
         NAME 'GLUE2ComputingServiceWaitingJobs'
         DESC 'Number of jobs waiting in the underlying computing managers
 	(i.e., Local Resource Manager System or LRMS)'
@@ -34,7 +35,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1.3
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1.4
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.17.4
         NAME 'GLUE2ComputingServiceStagingJobs'
         DESC 'Number of jobs that are staging files in/out'
         EQUALITY    integerMatch
@@ -43,7 +44,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1.4
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1.5
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.17.5
         NAME 'GLUE2ComputingServiceSuspendedJobs'
         DESC 'Number of jobs which started their execution, but are suspended
 	(e.g., for preemption)'
@@ -53,7 +54,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1.5
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1.6
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.17.6
         NAME 'GLUE2ComputingServicePreLRMSWaitingJobs'
         DESC 'Number of jobs that are in the Grid layer waiting to be passed to
 	the underlying computing manager (i.e., LRMS)'
@@ -63,14 +64,15 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.1.6
         SINGLE-VALUE
  )
 
-objectclass ( 1.3.6.1.4.1.6757.100.1.1.6.1
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.17
         NAME 'GLUE2ComputingService'
         DESC 'The computing service is autonomous and denotes a weak
 	aggregation among computing endpoints, the underlying computing 
 	managers and related execution environments, and the defined computing 
 	shares. The computing service enables to identify the whole set of 
 	entities providing the computing functionality with a persistent name.'
-        AUXILIARY
+        SUP GLUE2Service
+        STRUCTURAL
         MAY ( GLUE2ComputingServiceTotalJobs $ GLUE2ComputingServiceRunningJobs
 	$ GLUE2ComputingServiceWaitingJobs $ GLUE2ComputingServiceStagingJobs $
 	GLUE2ComputingServiceSuspendedJobs $ 

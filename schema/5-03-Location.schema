@@ -3,93 +3,94 @@
 # Section: 5.3 Location
 # Authors: Laurence Field (laurence.field@cern.ch), CERN
 #          David Horat (david.horat@cern.ch), CERN
+#          Florido Paganelli (florido.paganelli@hep.lu.se), Lund University
 
 # Location inherits from Entity
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.3.1 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.3.1 
         NAME 'GLUE2LocationID' 
         DESC 'Globally unique ID' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.3.2 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.3.2 
         NAME 'GLUE2LocationAddress' 
         DESC 'Street address' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.3.3 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.3.3 
         NAME 'GLUE2LocationPlace' 
         DESC 'Name of town/city' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.3.4 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.3.4 
         NAME 'GLUE2LocationCountry' 
         DESC 'Country name' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.3.5 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.3.5 
         NAME 'GLUE2LocationPostCode' 
         DESC 'Postal code' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.3.6 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.3.6 
         NAME 'GLUE2LocationLatitude' 
         DESC 'The position of a place north or south of the equator measured
 	from -90 degrees to +90 degrees with positive values going north and 
 	negative values going south'
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.3.7 
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.3.7 
         NAME 'GLUE2LocationLongitude' 
         DESC 'The position of a place east or west of Greenwich, England
 	measured from -180 degrees to +180 degrees with positive values going 
 	east and negative values going west'
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
         SINGLE-VALUE 
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.3.8
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.3.8
         NAME 'GLUE2LocationServiceForeignKey'
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.5.3.9
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.3.9
         NAME 'GLUE2LocationDomainForeignKey' 
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
-objectclass ( 1.3.6.1.4.1.6757.100.1.1.5.3 
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.3 
         NAME 'GLUE2Location'
         SUP GLUE2Entity
         DESC 'A geographical position' 

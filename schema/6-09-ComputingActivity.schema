@@ -3,64 +3,65 @@
 # Section: 6.9 ComputingActivity
 # Authors: Laurence Field (laurence.field@cern.ch), CERN
 #          David Horat (david.horat@cern.ch), CERN
+#          Florido Paganelli (florido.paganelli@hep.lu.se), Lund University
 
 # ComputingActivity inherits from Activity
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.1
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.1
         NAME 'GLUE2ComputingActivityType'
         DESC 'Type of computing activity'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.2
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.2
         NAME 'GLUE2ComputingActivityIDFromEndpoint'
         DESC 'The job ID as assigned by the computing endpoint'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.3
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.3
         NAME 'GLUE2ComputingActivityLocalIDFromManager'
         DESC 'The local ID of the job as assigned by the computing manager
 	(i.e., LRMS)'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.4
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.4
         NAME 'GLUE2ComputingActivityJobDescription'
         DESC 'Job description language used to specify the job request'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.5
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.5
         NAME 'GLUE2ComputingActivityState'
         DESC 'The state of the job according to the Grid state model for jobs'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.6
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.6
         NAME 'GLUE2ComputingActivityRestartState'
         DESC 'The state from which a failed job can restart upon a client
 	request'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.7
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.7
         NAME 'GLUE2ComputingActivityExitCode'
         DESC 'The exit code as returned by the executable of the job'
         EQUALITY    integerMatch
@@ -69,25 +70,25 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.7
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.8
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.8
         NAME 'GLUE2ComputingActivityComputingManagerExitCode'
         DESC 'The exit code provided by the computing manager (i.e., LRMS)'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.9
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.9
         NAME 'GLUE2ComputingActivityError'
         DESC 'Error messages as provided by the software components involved in
 	the management of the job'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.10
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.10
         NAME 'GLUE2ComputingActivityWaitingPosition'
         DESC 'For a waiting job in the computing manager (i.e., LRMS), the
 	position of the job in the queue'
@@ -97,37 +98,37 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.10
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.11
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.11
         NAME 'GLUE2ComputingActivityUserDomain'
         DESC 'User domain selected by the job owner in the job submission
 	request (an owner can belong to several user domains, it should decide 
 	which one to choose when submitting a job)'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.12
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.12
         NAME 'GLUE2ComputingActivityOwner'
         DESC 'The Grid identity of the jobs owner; in case of anonymity is
 	required, the value CONFIDENTIAL should be advertised'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.13
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.13
         NAME 'GLUE2ComputingActivityLocalOwner'
         DESC 'The local user name to which the  jobs owner is mapped into'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.14
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.14
         NAME 'GLUE2ComputingActivityRequestedTotalWallTime'
         DESC 'The total wall clock time requested by the job; for multi-slot
 	jobs, it represents the sum of wall clock time needed in each required
@@ -138,7 +139,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.14
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.15
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.15
         NAME 'GLUE2ComputingActivityRequestedTotalCPUTime'
         DESC 'The total CPU time requested by the job for multi-slot jobs, it
 	represents the sum of CPU time needed in each required slot'
@@ -148,7 +149,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.16
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.16
         NAME 'GLUE2ComputingActivityRequestedSlots'
         DESC 'The number of requested slots'
         EQUALITY    integerMatch
@@ -157,79 +158,79 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.16
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.17
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.17
         NAME 'GLUE2ComputingActivityRequestedApplicationEnvironment'
         DESC 'Serialization of the Name and Version of the requested
 	Application Environment to match the Name and Version properties of the
 	Application Environment (the serialization of the Name and Version is 
 	delegated to the implementers)'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.18
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.18
         NAME 'GLUE2ComputingActivityStdIn'
         DESC 'The name of the file which is used as the standard input of the
 	job'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.19
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.19
         NAME 'GLUE2ComputingActivityStdOut'
         DESC 'The name of the file which contains the standard output of the
 	job'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.20
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.20
         NAME 'GLUE2ComputingActivityStdErr'
         DESC 'The name of the file which contains the standard error of the
 	job'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.21
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.21
         NAME 'GLUE2ComputingActivityLogDir'
         DESC 'The name of the directory which contains the logs related to the
 	job and generated by the Grid layer (usually the directory is private 
 	to the job)'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.22
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.22
         NAME 'GLUE2ComputingActivityExecutionNode'
         DESC 'Hostname associated to the execution environment instance (i.e.,
 	worker node) running the job; multi-node jobs are described by several
 	instances of this attribute'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.23
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.23
         NAME 'GLUE2ComputingActivityQueue'
         DESC 'The name of the Computing Manager (i.e, LRMS) queue to which this
 	job was queued'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.24
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.24
         NAME 'GLUE2ComputingActivityUsedTotalWallTime'
         DESC 'The totally consumed wall clock time by the job (in case of
 	multi-slot jobs, this value refers to the sum of the wall clock time 
@@ -240,7 +241,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.24
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.25
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.25
         NAME 'GLUE2ComputingActivityUsedTotalCPUTime'
         DESC 'The totally consumed CPU time by the job (in case of multi-slot
 	jobs, this value refers to the sum of the consumed CPU time in each 
@@ -251,7 +252,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.25
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.26
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.26
         NAME 'GLUE2ComputingActivityUsedMainMemory'
         DESC 'The RAM used by the job'
         EQUALITY    integerMatch
@@ -260,135 +261,136 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.26
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.27
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.27
         NAME 'GLUE2ComputingActivitySubmissionTime'
         DESC 'Time when the job was submitted to a computing endpoint'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.28
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.28
         NAME 'GLUE2ComputingActivityComputingManagerSubmissionTime'
         DESC 'Time when the job was submitted to the Computing Manager (i.e.,
 	LRMS) by the Grid layer'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.29
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.29
         NAME 'GLUE2ComputingActivityStartTime'
         DESC 'Time when the job entered in the Computing Manager (i.e., LRMS) 
 	running state'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.30
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.30
         NAME 'GLUE2ComputingActivityComputingManagerEndTime'
         DESC 'Time when the job entered its final Computing Manager (i.e.,
 	LRMS) state'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.31
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.31
         NAME 'GLUE2ComputingActivityEndTime'
         DESC 'Time when the job entered its final Grid state'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.32
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.32
         NAME 'GLUE2ComputingActivityWorkingAreaEraseTime'
         DESC 'A working area is an allocated storage extent that holds the home
 	directories of the Grid jobs; the time when the dedicated working area 
 	of this job will be removed'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.33
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.33
         NAME 'GLUE2ComputingActivityProxyExpirationTime'
         DESC 'The expiration time of the proxy related to the job'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.34
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.34
         NAME 'GLUE2ComputingActivitySubmissionHost'
         DESC 'The name of the host from which the job was submitted (e.g., IP
 	address, port and host name)'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.35
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.35
         NAME 'GLUE2ComputingActivitySubmissionClientName'
         DESC 'The name of the software client which was used to submit the job'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.36
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.36
         NAME 'GLUE2ComputingActivityOtherMessages'
         DESC 'Optional job messages provided by either the Grid Layer or the
 	Computing Manager'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.37
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.37
         NAME 'GLUE2ComputingActivityComputingEndpointForeignKey'
         DESC 'ForeignKey'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.38
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.38
         NAME 'GLUE2ComputingActivityComputingShareForeignKey'
         DESC 'ForeignKey'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.6.9.39
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.25.39
         NAME 'GLUE2ComputingActivityExecutionEnvironmentForeignKey'
         DESC 'ForeignKey'
-        EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-objectclass ( 1.3.6.1.4.1.6757.100.1.1.6.9
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.25
         NAME 'GLUE2ComputingActivity'
         DESC 'An activity managed by an OGSA execution capability service'
-        AUXILIARY
+        SUP 'GLUE2Activity'
+        STRUCTURAL
         MUST ( GLUE2ComputingActivityState $ GLUE2ComputingActivityOwner )
         MAY ( GLUE2ComputingActivityType $ 
 	GLUE2ComputingActivityIDFromEndpoint $ 

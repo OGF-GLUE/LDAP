@@ -3,28 +3,29 @@
 # Section: 7.2 StorageServiceCapacity
 # Authors: Laurence Field (laurence.field@cern.ch), CERN
 #          David Horat (david.horat@cern.ch), CERN
+#          Florido Paganelli (florido.paganelli@hep.lu.se), Lund University
 
 # StorageServiceCapacity inherits from Entity
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.1
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.28.1
         NAME 'GLUE2StorageServiceCapacityID'
         DESC 'Globally unique ID'
-	EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.2
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.28.2
         NAME 'GLUE2StorageServiceCapacityType'
         DESC 'Type of storage capacity'
-	EQUALITY caseExactIA5Match
-        SUBSTR caseExactIA5SubstringsMatch
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+	EQUALITY caseExactMatch
+        SUBSTR caseExactSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.3
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.28.3
         NAME 'GLUE2StorageServiceCapacityTotalSize'
         DESC 'Size of dedicated storage extent'
         EQUALITY    integerMatch
@@ -33,7 +34,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.3
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.4
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.28.4
         NAME 'GLUE2StorageServiceCapacityFreeSize'
         DESC 'Size of free storage extent'
         EQUALITY    integerMatch
@@ -42,7 +43,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.4
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.5
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.28.5
         NAME 'GLUE2StorageServiceCapacityUsedSize'
         DESC 'Size of used storage extent'
         EQUALITY    integerMatch
@@ -51,7 +52,7 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.5
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.6
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.28.6
         NAME 'GLUE2StorageServiceCapacityReservedSize'
         DESC 'Size of reserved storage extent'
         EQUALITY    integerMatch
@@ -60,16 +61,16 @@ attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.6
         SINGLE-VALUE
  )
 
-attributetype ( 1.3.6.1.4.1.6757.100.1.1.7.2.7
+attributetype ( 1.3.6.1.4.1.6757.100.1.1.28.7
         NAME 'GLUE2StorageServiceCapacityStorageServiceForeignKey' 
         DESC 'ForeignKey' 
-        EQUALITY caseExactIA5Match 
-        SUBSTR caseExactIA5SubstringsMatch 
-        SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+        EQUALITY caseExactMatch 
+        SUBSTR caseExactSubstringsMatch 
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
         SINGLE-VALUE
  )
 
-objectclass ( 1.3.6.1.4.1.6757.100.1.1.7.2
+objectclass ( 1.3.6.1.4.1.6757.100.1.1.28
         NAME 'GLUE2StorageServiceCapacity'
         SUP GLUE2Entity
         DESC 'Description of the size and state of an homogeneous storage

@@ -1,0 +1,67 @@
+########################################################################
+#
+# Changelog for LDAP GLUE2 Schema
+#
+########################################################################
+
+v2.0 Florido Paganelli 2014-07-02
+
+    * Changed release to 2.0
+    
+v2.0rc7 Florido Paganelli 2014-05-05
+
+   * Changed Domain, Resource, Share, Policy to STRUCTURAL to be 
+     consistent with realisation document.   
+
+v2.0rc6 Florido Paganelli 2014-05-05
+
+   * Changed Domain, Resource, Share, Policy to ABSTRACT to be 
+     consistent with model and XML
+   * Changed ALL other objectclasses to STRUCTURAL
+   * Changed all Boolean fields to DirectoryString, that is, all
+     SYNTAX 1.3.6.1.4.1.1466.115.121.1.7
+     to
+     SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+     NOTE: this will remove boolean attributes without values from the 
+     rendering.
+   
+v2.0rc5 Florido Paganelli 2013-01-11
+  
+   * Changed GLUE2GroupName attribute NAME back to GLUE2GroupID, added GLUE2GroupName attribute as an alias
+   * Changed GLUE2Group object MUST back to GLUE2GroupID
+   * This solution preserves backward compatibility between EMI3 and EMI2 BDII products, that was broken with 2.0rc4.
+
+v2.0rc4 Florido Paganelli 2012-11-01
+  
+   * Changed GLUE2GroupID attribute to GLUE2GroupName, added attribute aliases
+   * Changed MUST to GLUE2GroupName
+   * The two solutions above preserve full compatibility.
+   
+v2.0rc3 Florido Paganelli 2012-10-14
+  
+   * Changed Type to DirectoryString (SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+     on all String attributetypes to align with LDAP Rendering DRAFT.
+     Changed EQUALITY and SUBSTR to be compatible with DirectoryString.
+   !!ATTENTION!!: there are issues with DirectoryString. A DirectoryString
+                attribute cannot be empty. Maybe this rc3 must be discarded.
+
+v2.0rc2 Florido Paganelli 2012-10-12
+  
+   * Changed OIDs on all objects.
+     A summary of the new OIDs numbering can be found at
+       https://twiki.cern.ch/twiki/pub/EMI/Glue2LdapStructure/ReassigningGLUE2OIDs.pdf
+
+v2.0rc1 Florido Paganelli 2012-10-10
+
+  * Added Version file
+  * changed all relevant entities from AUXILIARY to STRUCTURAL:
+    
+    Changed AUXILIARY to
+    
+    SUP GLUE2<Superclass>
+    STRUCTURAL
+    
+    in AdminDomain,UserDomain,
+    ComputingService, ComputingEndpoint, ComputingShare, ComputingManager,
+    ExecutionEnvironment, StorageService,
+    StorageEndpoint, StorageShare
