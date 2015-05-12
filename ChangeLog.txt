@@ -4,6 +4,9 @@
 #
 ########################################################################
 
+v2.0 Florido Paganelli 2015-05-12
+   * Changed URLs in documents to reflect current status
+
 v2.0 Florido Paganelli 2014-07-02
 
     * Changed release to 2.0
